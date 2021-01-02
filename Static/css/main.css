@@ -1,0 +1,385 @@
+@keyframes selectedmainmenu {
+    0% {
+        background-color: #101010;
+    }
+    100% {
+        background-color: #ddd;
+    }
+    0% {
+        color: #ddd;
+    }
+    100% {
+        color: #101010;
+    }
+}
+
+@keyframes selecteddropmenu {
+    0% {
+        background-color: #333;
+    }
+    100% {
+        background-color: #ddd;
+    }
+    0% {
+        color: #ddd;
+    }
+    100% {
+        color: #333;
+    }
+}
+
+@keyframes visible {
+    0% {
+        display: none;
+    }
+    100% {
+        display: block;
+    }
+}
+
+@keyframes invisible {
+    0% {
+        display: block;
+    }
+    100% {
+        display: none;
+    }
+}
+
+@keyframes popup {
+    0% {
+        display: none;
+        top: -20%;
+    }
+    20% {
+        display: block;
+        top: 13%
+    }
+    80% {
+        display: block;
+        top: 13%;
+    }
+    100% {
+        display: None;
+        top: -20%;
+    }
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    position: relative;
+    border: 0.13em solid #fff;
+    border-radius: 0.13em;
+}
+
+.topnav #myLinks {
+    display: none;
+}
+
+.topnav #myLinks a:hover {
+    background-color: #ddd;
+    color: #333;
+    animation-name: selecteddropmenu;
+    animation-duration: 0.5s;
+}
+
+.topnav a {
+    color: rgb(255, 255, 255);
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.topnav a.icon {
+    background: #101010;
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: #101010;
+    animation-name: selectedmainmenu;
+    animation-duration: 0.5s;
+}
+
+.active {
+    background-color: #101010;
+    color: #ddd;
+    text-align: left;
+    font-size: large;
+}
+
+table,
+td,
+th {
+    text-align: center;
+    margin: 5% auto;
+    border: 0.05em solid rgb(255, 128, 0);
+    border-radius: 0.13em;
+    border-collapse: collapse;
+    background-color: #000;
+}
+
+th {
+    border: 0.05em solid rgb(255, 128, 0);
+    padding: 0.5em 1em;
+    color: rgb(255, 128, 0);
+}
+
+td {
+    border: 0.05em solid rgb(255, 128, 0);
+    padding: 0% 1%;
+}
+
+input[type="submit"],
+a {
+    cursor: pointer;
+}
+
+h2 {
+    display: inline;
+}
+
+ul {
+    display: inline;
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    padding-right: 20px;
+}
+
+.navLog {
+    float: right;
+    padding: 5 20 0 0;
+}
+
+.navLogin {
+    float: right;
+    padding: 5 10 0 0;
+}
+
+.navDiv {
+    overflow: hidden;
+    color: #fff;
+    background-color: #000;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 40px;
+}
+
+.navDiv .icon {
+    display: none;
+}
+
+.search-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -140%);
+    background: #333;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-btn {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333;
+    transition: 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
+
+.search-box:hover>.search-txt {
+    width: 300px;
+    padding: 0 6px;
+}
+
+.search-box:hover>.search-btn {
+    background: white;
+    color: black;
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.search-txt:focus {
+    width: 300px;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.Successmsg {
+    text-align: center;
+    margin: 0 auto;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0f0;
+    background-color: #333;
+    position: absolute;
+    border: #0f0 solid 0.13em;
+    padding: 10px 30px;
+    border-radius: 0.13em;
+    font-size: 1.7vmax;
+    animation-name: popup;
+    animation-duration: 3s;
+}
+
+.errors {
+    text-align: center;
+    margin: 0 auto;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f00;
+    background-color: #333;
+    position: absolute;
+    padding: 10px 30px;
+    border: #f00 solid 0.13em;
+    border-radius: 0.13em;
+    font-size: 1.7vmax;
+    animation-name: popup;
+    animation-duration: 3s;
+}
+
+body {
+    background-color: #000;
+    text-align: center;
+    font-size: 1.7vmax;
+    color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .navDiv span:not(:first-child) {
+        display: none;
+    }
+    .navDiv a.icon {
+        float: right;
+        display: block;
+    }
+    .navDiv span {
+        padding-top: 10px;
+    }
+    .search-txt {
+        padding: 0 6px;
+        width: 240px;
+    }
+    .search-btn {
+        position: absolute;
+        top: 100%;
+        margin-top: 10px;
+        display: block;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+    .navLogin .toplogin {
+        padding-top: 20px
+    }
+    .search-box {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -140%);
+        background: #333;
+        height: 40px;
+        border-radius: 40px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navDiv.responsive {
+        position: relative;
+    }
+    .navDiv.responsive a.icon {
+        position: absolute;
+        right: 20;
+        top: 10;
+    }
+    .navDiv.responsive span {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .navDiv.responsive {
+        border-radius: 10px;
+        z-index: 100;
+    }
+    .errors {
+        text-align: center;
+        margin: 0 auto;
+        top: -20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #f00;
+        background-color: #333;
+        position: absolute;
+        padding: 5px 10px;
+        border: #f00 solid 0.13em;
+        border-radius: 0.13em;
+        font-size: 2.5vmax;
+        animation-name: popup;
+        animation-duration: 3s;
+    }
+    .Successmsg {
+        text-align: center;
+        margin: 0 auto;
+        top: -20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #0f0;
+        background-color: #333;
+        position: absolute;
+        border: #0f0 solid 0.13em;
+        padding: 5px 10px;
+        border-radius: 0.13em;
+        font-size: 2.5vmax;
+        animation-name: popup;
+        animation-duration: 3s;
+    }
+    .product #h2 {
+        color: #f80;
+        text-align: left;
+        font-size: 1.5em;
+        margin: 2%;
+        font-weight: bold;
+    }
+    .product #details {
+        margin-left: 20%;
+        text-align: left;
+        font-size: 1.3em;
+    }
+}

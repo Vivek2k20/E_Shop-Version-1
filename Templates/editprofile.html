@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{currentuser['name']}}'s Profile</title>
+{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/login.css')}}"> 
+<div class = "regform">
+    <br><u><b>Edit Profile</u></b><br><br><br><br>
+    <div id="actualform">
+    <form action="/editprofile" method="POST">
+        <label for="name">Name : </label>
+        <input type="text" autocomplete="off" id="name" name="name" placeholder="{{ currentuser['name'] }}" value="{{ currentuser['name'] }}" required
+        pattern="^[a-zA-Z-' ]*$">
+        <br><br>
+        <label for="email">Email : </label>
+        <input type="email" autocomplete="off" id="email" name="email" placeholder="{{ currentuser['email'] }}" value="{{ currentuser['email'] }}" required>
+        <br><br>
+        <label for="phone">Phone Number : </label>
+        <input type="tel" autocomplete="off" id="phone" name="phone" placeholder="{{ currentuser['phone'] }}" value="{{ currentuser['phone'] }}" maxlength="10"  
+        pattern="[789][0-9]{9}" required>
+        <br><br>
+        <label for="address">Address : </label>
+        <textarea id="address" autocomplete="off" name="address" cols="30" rows="10" placeholder="{{ currentuser['address'] }}" required>{{ currentuser['address'] }}</textarea>
+        <br><br><br>
+        <input type="submit" value="Submit">
+    </form><br>
+    {% if msg %}
+        <div class="errors">
+            {{ msg }}
+        </div>
+    {% endif %}
+    </div>
+</div>
+
+{% if successmsg %}
+    <div class="Successmsg">
+        {{ successmsg }}
+    </div><br><br>
+{% endif %}
+{% endblock %}

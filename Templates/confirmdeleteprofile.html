@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Confirm Delete Account?</title>
+{% endblock %}
+
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/login.css')}}"> 
+    <div class = "loginform" id="loginform">
+        <br><u><b><font color="#f00">Confirm?</u></font></b><br><br><br><br>
+        <div id="actualform">
+        <form action="/deleteprofile" method="POST">
+            <label for="password">Enter Password to confirm</label><br>
+             <input type="password" name="password" autocomplete="off" id="password" placeholder="Password (Min. 6 characters)"  
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
+                required>
+            <br><br><br>
+            <input type="submit" value="Confirm">
+        </form><br><br>
+        {% if msg %}
+        <div class="errors">
+            {{ msg }}
+        </div>
+        {% endif %}
+        <br><u><b><font color="#f00">Note:Deleting Account will cancel all your current orders and delete all account information.<br></b></u>
+    </div>
+</div>
+
+
+{% endblock %}

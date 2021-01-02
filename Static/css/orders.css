@@ -1,0 +1,221 @@
+@keyframes viewitems {
+    0% {
+        border: 0.13em solid #fff;
+        background-color: #000;
+        color: #fff;
+        font-size: 1.3em;
+    }
+    100% {
+        border: 0.13em solid #0f0;
+        background-color: #0f0;
+        color: #000;
+        font-size: 1.5em;
+    }
+}
+
+@keyframes cancelorder {
+    0% {
+        border: 0.13em solid #fff;
+        background-color: #000;
+        color: #fff;
+        font-size: 1.3em;
+    }
+    100% {
+        border: 0.13em solid #f00;
+        background-color: #f00;
+        color: #000;
+        font-size: 1.5em;
+    }
+}
+
+.order {
+    border: #fff 0.13em solid;
+    margin: 2% auto;
+    text-align: left;
+    border-radius: 0.13em;
+}
+
+.order #h2 {
+    color: #f80;
+    text-align: left;
+    font-size: 1em;
+    margin: 2% 0%;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0%;
+    left: 5%;
+    width: 30%;
+    position: relative;
+}
+
+.order #details {
+    margin-left: 20%;
+    text-align: left;
+    font-size: 0.7em;
+}
+
+.order #details #ordered {
+    color: #0f0;
+    display: inline;
+}
+
+.order #details #cancelled {
+    color: #f00;
+    display: inline;
+}
+
+.order #details #viewitems {
+    display: inline-block;
+    position: relative;
+    left: 30%;
+    width: 50%;
+}
+
+.order #details #cancelorder {
+    display: inline-block;
+    position: relative;
+    left: 40.3%;
+    width: 50%;
+    margin-top: 2%;
+}
+
+.order #details #viewitems a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-left: 70%;
+    font-size: 1.3em;
+    border-radius: 0.13em;
+}
+
+.order #details #viewitems a:hover {
+    background-color: #0f0;
+    color: #000;
+    animation-name: viewitems;
+    animation-duration: 0.5s;
+    border: 0.13em solid #0f0;
+    font-size: 1.5em;
+}
+
+.order #details #cancelorder a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-left: 70%;
+    font-size: 1.3em;
+    border-radius: 0.13em;
+}
+
+.order #details #cancelorder a:hover {
+    background-color: #f00;
+    color: #000;
+    animation-name: cancelorder;
+    animation-duration: 0.5s;
+    border: 0.13em solid #f00;
+    font-size: 1.5em;
+}
+
+.ordered_items {
+    color: #0097e6;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: left;
+    position: relative;
+    left: 2%;
+}
+
+.ordersummary {
+    margin: 2% auto;
+    text-align: left;
+    border-radius: 0.13em;
+}
+
+.ordersummary #h2 {
+    color: #f80;
+    text-align: left;
+    margin: 0% 2%;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0%;
+    left: 0%;
+    width: 30%;
+    position: relative;
+    font-size: 1.5em;
+}
+
+.ordersummary #details {
+    margin-left: 10%;
+    margin-top: 2%;
+    text-align: left;
+    font-size: 1em;
+}
+
+.ordersummary #details #ordered {
+    color: #0f0;
+    display: inline;
+}
+
+.ordersummary #details #cancelled {
+    color: #f00;
+    display: inline;
+}
+
+.ordersummary #details #viewitems {
+    display: inline-block;
+    position: relative;
+    left: 30%;
+    width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+    .order {
+        border: #fff 0.13em solid;
+        margin: 2% auto;
+        text-align: left;
+        border-radius: 0.13em;
+    }
+    .order #h2 {
+        color: #f80;
+        text-align: left;
+        font-size: 1.7em;
+        margin: 2% 0%;
+        display: inline-block;
+        font-weight: bold;
+        padding: 0%;
+        left: 5%;
+        width: 30%;
+        position: relative;
+    }
+    .order #details {
+        margin-left: 20%;
+        text-align: left;
+        font-size: 1em;
+    }
+    .order #details #viewitems a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline;
+        padding: 2px 10px;
+        margin-left: 0%;
+        font-size: 1.3em;
+        border-radius: 0.13em;
+    }
+    .order #details #cancelorder {
+        display: inline-block;
+        position: relative;
+        left: 54.5%;
+        width: 50%;
+        margin-top: 5%;
+    }
+    .order #details #cancelorder a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline;
+        padding: 2px 10px;
+        margin-left: 0%;
+        font-size: 1.3em;
+        border-radius: 0.13em;
+    }
+}

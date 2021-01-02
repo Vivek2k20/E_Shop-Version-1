@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> Home </title>
+{% endblock %}
+
+
+{% block body %}
+<link rel="shortcut icon" href="{{url_for('static',filename='outline_offline_bolt_black_18dp_Zrv_icon.ico')}}" />
+{% if successmsg!=""%}
+  <div class="Successmsg">
+    {{successmsg}}
+  </div><br><br>
+{% endif %}
+<form action="/products" method="post">
+  <div class="search-box">
+    <input class="search-txt" type="text" name="search_name" placeholder="Search Products">
+    <button type="submit" name="search" class="search-btn"><i class="fas fa-search"></i></button>
+  </div>
+</form>
+{% endblock %}

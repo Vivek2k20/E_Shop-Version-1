@@ -1,0 +1,435 @@
+@keyframes edit {
+    0% {
+        border: 0.13em solid #fff;
+        background-color: #000;
+        color: #fff;
+        font-size: 1em;
+    }
+    100% {
+        border: 0.13em solid #0f0;
+        background-color: #0f0;
+        color: #000;
+        font-size: 1.2em;
+    }
+}
+
+@keyframes order {
+    0% {
+        border: 0.13em solid #fff;
+        background-color: #000;
+        color: #fff;
+        font-size: 1em;
+    }
+    100% {
+        border: 0.13em solid #f80;
+        background-color: #f80;
+        color: #000;
+        font-size: 1.2em;
+    }
+}
+
+@keyframes delete {
+    0% {
+        border: 0.13em solid #fff;
+        background-color: #000;
+        color: #fff;
+        font-size: 1em;
+    }
+    100% {
+        border: 0.13em solid #f00;
+        background-color: #f00;
+        color: #000;
+        font-size: 1.2em;
+    }
+}
+
+.profile {
+    text-align: left;
+    font-size: 1em;
+    border: 0.3em #0097e6 solid;
+    padding: 2px 10px;
+    border-radius: 0.13em;
+    margin-top: 2%;
+}
+
+.profile #name {
+    text-align: left;
+    font-size: 2em;
+    margin: 2% 0%;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0%;
+    left: 5%;
+    width: 30%;
+    position: relative;
+    top: 1%;
+    color: #f80;
+}
+
+.profile #details {
+    display: inline-block;
+    margin-left: 10%;
+    font-size: 1.7vmax;
+    width: 30%;
+    position: relative;
+}
+
+.profile #links {
+    display: inline-block;
+    width: 30%;
+    margin-left: 70%;
+    color: #fff;
+}
+
+.profile #links #edit a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-top: 0%;
+    margin-left: 40%;
+    font-size: 1em;
+    width: fit-content;
+    border-radius: 0.13em;
+}
+
+.profile #links #edit a:hover {
+    background-color: #0f0;
+    color: #000;
+    animation-name: edit;
+    animation-duration: 0.5s;
+    border: 0.13em solid #0f0;
+    font-size: 1.2em;
+}
+
+.profile #links #orders a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-top: 0%;
+    margin-left: 40%;
+    font-size: 1em;
+    width: fit-content;
+    border-radius: 0.13em;
+}
+
+.profile #links #orders a:hover {
+    background-color: #f80;
+    color: #000;
+    animation-name: order;
+    animation-duration: 0.5s;
+    font-size: 1.2em;
+    border: 0.13em solid #f80;
+}
+
+.profile #links #delete a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-top: 0%;
+    margin-left: 40%;
+    font-size: 1em;
+    width: fit-content;
+    border-radius: 0.13em;
+}
+
+.profile #links #delete a:hover {
+    background-color: #f00;
+    color: #000;
+    animation-name: delete;
+    animation-duration: 0.5s;
+    border: 0.13em solid #f00;
+    font-size: 1.2em;
+}
+
+.confirmorderheading {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff0;
+    text-align: left;
+    position: relative;
+    top: 10px;
+}
+
+.profile #olinks {
+    display: inline-block;
+    width: 30%;
+    margin-left: 70%;
+    color: #fff;
+}
+
+.profile #olinks #edit a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-top: 0%;
+    margin-left: 40%;
+    font-size: 1em;
+    width: fit-content;
+    border-radius: 0.13em;
+}
+
+.profile #olinks #edit a:hover {
+    background-color: #0f0;
+    color: #000;
+    animation-name: edit;
+    animation-duration: 0.5s;
+    border: 0.13em solid #0f0;
+    font-size: 1.2em;
+}
+
+.profile #olinks #orders a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-top: 0%;
+    margin-left: 40%;
+    font-size: 1em;
+    width: fit-content;
+    border-radius: 0.13em;
+}
+
+.profile #olinks #orders a:hover {
+    background-color: #f80;
+    color: #000;
+    animation-name: order;
+    animation-duration: 0.5s;
+    font-size: 1.2em;
+    border: 0.13em solid #f80;
+}
+
+.profile #olinks #delete a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-top: 0%;
+    margin-left: 40%;
+    font-size: 1em;
+    width: fit-content;
+    border-radius: 0.13em;
+}
+
+.profile #olinks #delete a:hover {
+    background-color: #f00;
+    color: #000;
+    animation-name: delete;
+    animation-duration: 0.5s;
+    border: 0.13em solid #f00;
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 600px) {
+    @keyframes oedit {
+        0% {
+            border: 0.13em solid #fff;
+            color: #fff;
+            display: inline;
+            padding: 2px 10px;
+            margin-top: 0%;
+            margin-left: 4%;
+            font-size: 2em;
+            width: 50%;
+            position: relative;
+            border-radius: 0.13em;
+        }
+        100% {
+            border: 0.13em solid #0f0;
+            color: #000;
+            display: inline;
+            background-color: #0f0;
+            padding: 2px 10px;
+            margin-top: 0%;
+            margin-left: 4%;
+            font-size: 2.2em;
+            width: 50%;
+            position: relative;
+            border-radius: 0.13em;
+        }
+    }
+    @keyframes oorder {
+        0% {
+            border: 0.13em solid #fff;
+            color: #fff;
+            display: inline;
+            padding: 2px 10px;
+            margin-top: 0%;
+            margin-left: 20%;
+            font-size: 2em;
+            width: fit-content;
+            border-radius: 0.13em;
+        }
+        100% {
+            border: 0.13em solid #f80;
+            background-color: #f80;
+            color: #000;
+            display: inline;
+            padding: 2px 10px;
+            margin-top: 0%;
+            margin-left: 20%;
+            font-size: 2.2em;
+            width: fit-content;
+            border-radius: 0.13em;
+        }
+    }
+    @keyframes odelete {
+        0% {
+            border: 0.13em solid #fff;
+            color: #fff;
+            display: inline;
+            padding: 2px 10px;
+            margin-top: 0%;
+            margin-left: 16%;
+            font-size: 2em;
+            width: fit-content;
+            border-radius: 0.13em;
+        }
+        100% {
+            border: 0.13em solid #f00;
+            background-color: #f00;
+            color: #000;
+            display: inline;
+            padding: 2px 10px;
+            margin-top: 0%;
+            margin-left: 16%;
+            font-size: 2.2em;
+            width: fit-content;
+            border-radius: 0.13em;
+        }
+    }
+    .confirmorderheading {
+        font-size: 2em;
+        font-weight: bold;
+        color: #ff0;
+        text-align: left;
+        position: relative;
+        top: 10px;
+        left: 0%;
+        margin-bottom: 2%;
+        display: inline-block;
+    }
+    .profile {
+        text-align: left;
+        font-size: 1em;
+        border: 0.3em #0097e6 solid;
+        padding: 2px 10px;
+        border-radius: 0.13em;
+        margin-top: 2%;
+    }
+    .profile #name {
+        text-align: left;
+        font-size: 3em;
+        margin: 2% 0%;
+        display: inline-block;
+        font-weight: bold;
+        padding: 0%;
+        left: 5%;
+        width: 30%;
+        position: relative;
+        top: 1%;
+        color: #f80;
+    }
+    .profile #details {
+        display: inline-block;
+        margin-left: 15%;
+        font-size: 1.7em;
+        width: 80%;
+        margin-top: 0%;
+        position: relative;
+    }
+    .profile #olinks {
+        display: inline-block;
+        width: 100%;
+        margin-left: 50%;
+        color: #fff;
+    }
+    .profile #olinks #orders a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 20%;
+        font-size: 2em;
+        width: fit-content;
+        border-radius: 0.13em;
+    }
+    .profile #olinks #orders a:hover {
+        border: 0.13em solid #f80;
+        background-color: #f80;
+        color: #000;
+        display: inline;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 20%;
+        font-size: 2.2em;
+        width: fit-content;
+        animation-name: oorder;
+        animation-duration: 0.5s;
+        border-radius: 0.13em;
+    }
+    .profile #olinks #edit a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 4%;
+        font-size: 2em;
+        width: 50%;
+        position: relative;
+        border-radius: 0.13em;
+    }
+    .profile #olinks #edit a:hover {
+        border: 0.13em solid #0f0;
+        background-color: #0f0;
+        color: #000;
+        display: inline;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 4%;
+        font-size: 2.2em;
+        width: 50%;
+        position: relative;
+        animation-name: oedit;
+        animation-duration: 0.5s;
+        border-radius: 0.13em;
+    }
+    .profile #olinks #delete a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 16%;
+        font-size: 2em;
+        width: fit-content;
+        border-radius: 0.13em;
+    }
+    .profile #olinks #delete a:hover {
+        border: 0.13em solid #f00;
+        background-color: #f00;
+        color: #000;
+        display: inline;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 16%;
+        font-size: 2.2em;
+        width: fit-content;
+        animation-name: odelete;
+        animation-duration: 0.5s;
+        border-radius: 0.13em;
+    }
+    .profile #links {
+        display: inline-block;
+        width: 30%;
+        margin-left: 55%;
+        color: #fff;
+        margin-top: 5%;
+        font-size: 1.7em;
+    }
+}

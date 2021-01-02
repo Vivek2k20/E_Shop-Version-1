@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/products.css')}}">
+{% if products|length <1 %}
+    <div class="noitemincart">Sorry! No products found!</div>
+{% else %}
+    {% for i in products %}
+        <div class="product" id="product ">
+            <div id="h2" ><u>{{ i[1] }}</u></div>
+            <div id="details">
+            Category : {{ ptype[i[2]-1][0]}}<br>
+            Price : ₹{{ i[3] }}<br>
+            Stock left : 
+            {% if i[4] > 25 %}
+            <div id="highstock">{{ i[4] }}</div>
+            {% elif i[4]>10 %}
+            <div id="midstock" >{{ i[4] }}</div>
+            {% else %}
+            <div id="lowstock">{{ i[4] }}</div>
+            {% endif %}
+            {% if currentuser['id']!=None %}
+            <a href="addtocart/{{ i[0] }}">🛒 ADD TO CART</a>
+            {% else %}
+            <div id="Logintoaddtocart"><a href="login">🛒 Login to add to cart</a></div>
+            {% endif %}
+            <br><br>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

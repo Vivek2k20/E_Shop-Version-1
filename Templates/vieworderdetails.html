@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/orders.css')}}">
+<div class="ordersummary" id="ordersummary ">
+    <div id="h2" >ORDER ID #{{ order[0][0] }}</div>
+    <div id="details">
+    Ordered at : {{ order[0][2] }}<br>
+    Total Amount : ₹{{ order[0][1] }}<br>
+    Status : 
+    {% if order[0][3] == 2 %}
+        <div id="ordered">Ordered</div>
+    {% else %}
+            <div id="cancelled">Cancelled</div>
+    {% endif %}
+    </div>
+</div>
+<div class="ordered_items" id="ordered_items">
+    <h2>ITEMS :</h2><br></div>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/products.css')}}">
+{% if ordered_items|length <1 %}
+    <h4 style="font-size:1.5vmax;">There are no items in this order!.</h4>
+{% else %}
+    {% for i in ordered_items %}
+        <div class="product" id="product ">
+            <div id="h2" ><u>{{ products[i[1]-1][1] }}</u></div>
+            <div id="total">Amount : ₹{{ i[3] }}</div><br>
+            <div id="details">
+            Category : {{ ptype[products[i[1]-1][2]-1][0]}}<br>
+            Price : ₹{{ products[i[1]-1][3] }}<br>
+            Quantity : <div id="highstock">{{ i[2] }}</div>
+            <br><br>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

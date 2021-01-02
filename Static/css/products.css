@@ -1,0 +1,572 @@
+@keyframes addtocart {
+    0% {
+        border: 0.13em solid #fff;
+        background-color: #000;
+        color: #fff;
+        font-size: 1.3em;
+    }
+    100% {
+        border: 0.13em solid #0f0;
+        background-color: #0f0;
+        color: #000;
+        font-size: 1.5em;
+    }
+}
+
+@keyframes addtocart2 {
+    0% {
+        border: 0.13em solid #fff;
+        background-color: #000;
+        color: #fff;
+        width: 20%;
+        font-size: 1.3em;
+    }
+    100% {
+        border: 0.13em solid #0f0;
+        background-color: #0f0;
+        color: #000;
+        width: 22%;
+        font-size: 1.5em;
+    }
+}
+
+@keyframes order {
+    0% {
+        border: 0.13em solid #ddd;
+        background-color: #333;
+        color: #0f0;
+        font-size: 1.4em;
+    }
+    100% {
+        border: 0.13em solid #0f0;
+        background-color: #0f0;
+        color: #333;
+        font-size: 1.6em;
+    }
+}
+
+@keyframes logintoaddtocart {
+    0% {
+        border: 0.13em solid #fff;
+        background-color: #000;
+        color: #fff;
+        font-size: 1.3em;
+    }
+    100% {
+        border: 0.13em solid #f00;
+        background-color: #f00;
+        font-size: 1.5em;
+        color: #000;
+    }
+}
+
+.product {
+    border: #fff 0.13em solid;
+    margin: 2% auto;
+    text-align: left;
+    border-radius: 0.13em;
+}
+
+.product #h2 {
+    color: #f80;
+    text-align: left;
+    font-size: 1em;
+    margin: 2% 0%;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0%;
+    left: 5%;
+    width: 30%;
+    position: relative;
+}
+
+.product #details {
+    margin-left: 20%;
+    text-align: left;
+    font-size: 0.7em;
+    margin-bottom: 1%;
+}
+
+.product #details #highstock {
+    color: #0f0;
+    display: inline;
+}
+
+.product #details #lowstock {
+    color: #f00;
+    display: inline;
+}
+
+.product #details #midstock {
+    color: #ff0;
+    display: inline;
+}
+
+.product #details a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-left: 70%;
+    font-size: 1.3em;
+    border-radius: 0.13em;
+}
+
+.product #details a:hover {
+    background-color: #0f0;
+    color: #000;
+    animation-name: addtocart;
+    animation-duration: 0.5s;
+    border: 0.13em solid #0f0;
+    font-size: 1.5em;
+}
+
+.product #details #Logintoaddtocart a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-left: 70%;
+    font-size: 1.3em;
+    border-radius: 0.13em;
+}
+
+.product #details #Logintoaddtocart a:hover {
+    background-color: #f00;
+    color: #000;
+    animation-name: logintoaddtocart;
+    animation-duration: 0.5s;
+    border: 0.13em solid #f00;
+    font-size: 1.5em;
+}
+
+.product #details #deletefromcart a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-top: 0%;
+    margin-left: 90%;
+    font-size: 1.3em;
+    border-radius: 0.13em;
+}
+
+.product #details #deletefromcart a:hover {
+    background-color: #f00;
+    color: #000;
+    animation-name: logintoaddtocart;
+    animation-duration: 0.5s;
+    border: 0.13em solid #f00;
+    font-size: 1.5em;
+}
+
+.product #details #editcart a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline;
+    padding: 2px 10px;
+    margin-top: 0%;
+    margin-left: 70%;
+    font-size: 1.3em;
+    width: fit-content;
+    border-radius: 0.13em;
+}
+
+.product #details #editcart a:hover {
+    background-color: #0f0;
+    color: #000;
+    animation-name: addtocart;
+    animation-duration: 0.5s;
+    border: 0.13em solid #0f0;
+    font-size: 1.5em;
+}
+
+.product #details #editcart {
+    width: 20%;
+    position: relative;
+    margin-left: 0%;
+    top: 0%;
+    left: 50%;
+    display: inline-block;
+    margin-right: 30%;
+}
+
+.product #details #deletefromcart {
+    width: 5%;
+    position: relative;
+    display: inline-block;
+    margin-left: 0%;
+    top: 0%;
+    left: 25%;
+}
+
+.product #total {
+    font-weight: bold;
+    width: 20%;
+    left: 40%;
+    color: #0097e6;
+    display: inline-block;
+    margin-left: 10%;
+    position: relative;
+    font-size: 1em;
+}
+
+.cartid {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff0;
+    text-align: left;
+    position: relative;
+    top: 10px;
+}
+
+.carttotal {
+    font-weight: bold;
+    position: fixed;
+    bottom: 0%;
+    color: #0097e6;
+    display: block;
+    border-top: 0.13em #f80 solid;
+    margin: 0%;
+    left: 2px;
+    text-align: left;
+    width: 100%;
+    padding: 1%;
+    background-color: #333;
+}
+
+.carttotal #placeorder {
+    width: 40%;
+    display: inline-block;
+    left: 20%;
+    position: relative;
+}
+
+.carttotal #text {
+    width: 50%;
+    display: inline-block;
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 2px 10px;
+}
+
+.carttotal #placeorder a {
+    border: #ddd 0.13em solid;
+    border-radius: 0.13em;
+    font-size: 1.4em;
+    padding: 2px 10px;
+    color: #0f0;
+    font-family: sans-serif;
+}
+
+.carttotal #placeorder a:hover {
+    background-color: #0f0;
+    color: #333;
+    animation-name: order;
+    animation-duration: 0.5s;
+    border: 0.13em solid #0f0;
+    font-size: 1.6em;
+}
+
+.AddProductsLink a {
+    color: #f80;
+}
+
+input[type="submit"]:hover {
+    background-color: #0f0;
+    border: #0f0 0.13em solid;
+    color: #000;
+    animation-duration: 0.5s;
+    animation-name: addtocart2;
+    font-size: 1.5em;
+    width: 22%;
+}
+
+input[type="submit"] {
+    background-color: #000;
+    color: #0f0;
+    width: 20%;
+    position: relative;
+    border: 0.13em solid #fff;
+    border-radius: 0.13em;
+    padding: 5px 10px;
+    left: 42%;
+    font-size: 1.3em;
+    display: inline;
+}
+
+.noitemincart {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    font-size: 1.5vmax;
+}
+
+@media screen and (max-width: 600px) {
+    @keyframes addtocart {
+        0% {
+            border: 0.13em solid #fff;
+            background-color: #000;
+            color: #fff;
+            font-size: 1em;
+            margin-left: 30%;
+        }
+        100% {
+            border: 0.13em solid #0f0;
+            background-color: #0f0;
+            color: #000;
+            font-size: 1.2em;
+            margin-left: 25%;
+        }
+    }
+    @keyframes addtocart2 {
+        0% {
+            border: 0.13em solid #fff;
+            background-color: #000;
+            color: #fff;
+            width: 40%;
+            font-size: 1em;
+        }
+        100% {
+            border: 0.13em solid #0f0;
+            background-color: #0f0;
+            color: #000;
+            width: 45%;
+            font-size: 1.2em;
+        }
+    }
+    @keyframes editcart {
+        0% {
+            border: 0.13em solid #fff;
+            background-color: #000;
+            color: #fff;
+            display: inline;
+            padding: 2px 10px;
+            margin-top: 0%;
+            margin-left: 70%;
+            font-size: 1.3em;
+            width: fit-content;
+            border-radius: 0.13em;
+        }
+        100% {
+            border: 0.13em solid #0f0;
+            background-color: #0f0;
+            color: #000;
+            display: inline;
+            padding: 2px 10px;
+            margin-top: 0%;
+            margin-left: 60%;
+            font-size: 1.5em;
+            width: fit-content;
+            border-radius: 0.13em;
+        }
+    }
+    @keyframes deletefromcart {
+        0% {
+            border: 0.13em solid #fff;
+            background-color: #000;
+            color: #fff;
+            font-size: 1.3em;
+            margin-left: 30%;
+        }
+        100% {
+            border: 0.13em solid #f00;
+            background-color: #f00;
+            font-size: 1.5em;
+            color: #000;
+            margin-left: 0%;
+        }
+    }
+    .noitemincart {
+        display: block;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+    .product {
+        border: #fff 0.13em solid;
+        margin: 5% auto;
+        text-align: left;
+        border-radius: 0.13em;
+    }
+    .product #h2 {
+        color: #f80;
+        text-align: left;
+        font-size: 1.7em;
+        margin: 2% 0%;
+        display: inline-block;
+        font-weight: bold;
+        padding: 0%;
+        left: 5%;
+        width: 50%;
+        position: relative;
+    }
+    .product #details {
+        margin-left: 20%;
+        text-align: left;
+        font-size: 1em;
+        margin-bottom: 1%;
+    }
+    .product #details a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline;
+        padding: 2px 10px;
+        margin-left: 30%;
+        font-size: 1em;
+        border-radius: 0.13em;
+    }
+    .product #details a:hover {
+        background-color: #0f0;
+        color: #000;
+        animation-name: addtocart;
+        animation-duration: 0.5s;
+        border: 0.13em solid #0f0;
+        font-size: 1.2em;
+        margin-left: 25%;
+    }
+    input[type="number"] {
+        padding: 1px 2px;
+        position: relative;
+        width: 20%
+    }
+    input[type="submit"] {
+        background-color: #000;
+        color: #0f0;
+        width: 40%;
+        position: relative;
+        border: 0.13em solid #fff;
+        border-radius: 0.13em;
+        padding: 2px 5px;
+        left: 10%;
+        font-size: 1em;
+        display: inline;
+    }
+    input[type="submit"]:hover {
+        background-color: #0f0;
+        border: #0f0 0.13em solid;
+        color: #000;
+        animation-duration: 0.5s;
+        animation-name: addtocart2;
+        font-size: 1.2em;
+        width: 45%;
+    }
+    .product #details #deletefromcart {
+        width: 5%;
+        position: relative;
+        display: inline-block;
+        margin-left: 0%;
+        top: 0%;
+        left: 10%;
+    }
+    .product #details #deletefromcart a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 30%;
+        font-size: 1.3em;
+        border-radius: 0.13em;
+    }
+    .product #details #deletefromcart a:hover {
+        background-color: #f00;
+        color: #000;
+        animation-name: deletefromcart;
+        animation-duration: 0.5s;
+        border: 0.13em solid #f00;
+        font-size: 1.5em;
+        margin-left: 0%;
+    }
+    .product #details #editcart {
+        width: 10%;
+        position: relative;
+        margin-left: 0%;
+        top: 0%;
+        left: 10%;
+        display: inline-block;
+        margin-right: 30%;
+    }
+    .product #details #editcart a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 70%;
+        font-size: 1.3em;
+        width: fit-content;
+        border-radius: 0.13em;
+    }
+    .product #details #editcart a:hover {
+        border: 0.13em solid #0f0;
+        background-color: #0f0;
+        color: #000;
+        display: inline;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 60%;
+        font-size: 1.5em;
+        width: fit-content;
+        border-radius: 0.13em;
+        animation: editcart;
+        animation-duration: 0.5s;
+    }
+    .product #total {
+        font-weight: bold;
+        width: 20%;
+        left: 0%;
+        color: #0097e6;
+        display: inline;
+        margin: 2% 0%;
+        margin-left: 10%;
+        position: relative;
+        font-size: 1.3em;
+    }
+    .carttotal {
+        font-weight: bold;
+        position: fixed;
+        bottom: 0%;
+        color: #0097e6;
+        display: block;
+        border-top: 0.3em #f80 solid;
+        margin: 0%;
+        font-size: 1.5em;
+        left: 2px;
+        text-align: left;
+        width: 100%;
+        padding: 1%;
+        background-color: #333;
+    }
+    .carttotal #text {
+        width: 50%;
+        display: inline-block;
+        font-size: 1.4em;
+        font-weight: bold;
+        font-family: sans-serif;
+        padding: 2px 10px;
+    }
+    .carttotal #placeorder {
+        display: inline;
+        left: 50%;
+        top: 25%;
+        position: absolute;
+        width: 50%;
+    }
+    .product #details #Logintoaddtocart a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline;
+        padding: 2px 10px;
+        margin-left: 30%;
+        font-size: 1.3em;
+        border-radius: 0.13em;
+    }
+}

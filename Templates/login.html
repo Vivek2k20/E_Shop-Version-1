@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Login</title>
+{% endblock %}
+
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/login.css')}}"> 
+    <div class = "loginform" id="loginform">
+        <br><u><b>LOGIN</u></b><br><br><br><br>
+        <div id="actualform">
+        <form action="/login" method="POST">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" autocomplete="off" placeholder="Enter a valid Email" required><br><br>
+            <label for="password">Password</label>
+             <input type="password" name="password" autocomplete="off" id="password" placeholder="Password (Min. 6 characters)"  
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
+                required>
+            <br><br><br>
+            <input type="submit" value="Login">
+        </form><br><br>
+        {% if msg %}
+        <div class="errors">
+            {{ msg }}
+        </div>
+        {% endif %}
+        <br><br><br>
+        <a href="/signup"><b>New to Devkart? Register here!</a></b>
+        </div>
+    </div>
+    {% if successmsg %}
+        <div class="Successmsg">
+            {{ successmsg }}
+        </div><br><br>
+    {% endif %}
+{% endblock %}

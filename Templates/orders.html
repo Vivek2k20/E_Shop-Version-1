@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Your Orders</title>
+{% endblock %}
+
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/orders.css')}}">
+{% if orders|length <1 %}
+    <h4 style="font-size:1.5vmax;">No orders have been placed yet!</h4>
+{% else %}
+    {% for i in orders %}
+        <div class="order" id="order ">
+            <div id="h2" ><u>Order Id #{{ i[0] }}</u></div>
+            <div id="details">
+            Ordered at : {{ i[4] }}<br>
+            Total Amount : ₹{{ i[3] }}<br>
+            Status : 
+            {% if i[5] == 2 %}
+            <div id="ordered">Ordered</div>
+            {% else %}
+            <div id="cancelled">Cancelled</div>
+            {% endif %}
+            <div id="viewitems"><a href="/vieworder/{{ i[0] }}">View Items</a></div>
+            {% if i[5]==2 %}
+            <div id="cancelorder"><a href="/cancelorder/{{i[0]}}">Cancel Order</a></div>
+            {% endif %}
+            <br><br>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+{% if successmsg %}
+    <div class="Successmsg">
+        {{ successmsg }}
+    </div><br><br>
+{% endif %}
+
+
+
+{% endblock %}

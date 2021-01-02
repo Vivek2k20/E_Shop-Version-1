@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta chatset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        {% block head %}{% endblock %}
+        </head>
+        <body>
+            <div class="topnav">
+                <a href="/" class="active" style="font-size=3vmax"><b>DeVKART</a></b>
+                <div id="myLinks">
+                    <a href="/products">Products</a>
+                    {% if currentuser['id']!=None %}
+                    <a href="/profile">Profile/Orders</a>
+                    <a href="/cart">Cart</a>
+                    <a href="/logout">Logout</a>
+                    {% else %}
+                    <a href="/login">Login/Signup</a>
+                    {% endif %}
+                    <a href="/about">About/Contact Us</a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("myLinks");
+                    if (x.style.display === "block") 
+                    {
+                        x.style.display = "none";
+                    } else 
+                    {
+                        x.style.display = "block";
+                    }
+                }
+            </script>
+            {% block body %}
+            {% endblock %}
+        </body>
+    </head>
+</html>

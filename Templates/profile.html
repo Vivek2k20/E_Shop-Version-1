@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{currentuser['name']}}'s Profile</title>
+{% endblock %}
+
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/profile.css')}}">
+<div class="profile" id="profile">
+    <div id="name">{{currentuser['name']}}</div><br>
+    <div id="details">
+    Email : {{currentuser['email']}}<br>
+    Phone : {{currentuser['phone']}}<br>
+    Address : {{currentuser['address']}}
+    </div>
+    <div id="links">
+        <div id="orders"><a href="/orders">Orders</a></div><br>
+        <div id="edit"><a href="/editprofile" id="edit">Edit</a></div><br>
+        <div id="delete"><a href="/deleteprofile" id="delete">Delete</a></div><br>
+    </div>
+</div>
+
+{% if successmsg %}
+    <div class="Successmsg">
+        {{ successmsg }}
+    </div><br><br>
+{% endif %}
+{% endblock %}
