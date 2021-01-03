@@ -65,13 +65,15 @@ CLASSES
 ########################################
 '''
 class User:
-    def __init__(self,id,name,password,email,phone,address):
+    def __init__(self,id,name,password,email,phone,address,s_id,ans):
         self.id=id
         self.name=name
         self.password=password
         self.email=email
         self.phone=phone
         self.address=address
+        self.s_id=s_id
+        self.ans=ans
 
 
 class Product:
@@ -147,7 +149,7 @@ SOME FUNCTIONS TO RETURN EMPTY OBJECTS
 """
 
 def EmptyUser():
-    return User(None,None,None,None,None,None).__dict__
+    return User(None,None,None,None,None,None,None,None).__dict__
 
 def EmptyProduct():
     return Product(None,None,None,None,None).__dict__
@@ -219,6 +221,39 @@ def ptype():
 ########################################
 """
 
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+########################################
+FUNCTION TO RETURN THE SECRET QUESTIONS
+########################################
+"""
+def questions():
+    g.db = connect_db()
+    try:
+        cursor = g.db.execute('SELECT id,value FROM Questions;')
+        s_questions=cursor.fetchall()
+        g.db.commit()
+        g.db.close()
+        return s_questions
+    except:
+        g.db.rollback()
+        g.db.close()
+        return("Exception in questions function")
+"""
+########################################
+########################################
+"""
 
 
 
@@ -606,7 +641,7 @@ def loginuser():
                 email=request.form['email']
                 phone=g.db.execute('SELECT phone FROM Users WHERE email = ?',[request.form['email']]).fetchall()
                 address=g.db.execute('SELECT address FROM Users WHERE email = ?',[request.form['email']]).fetchall()
-                session['User']=User(uid[0][0],name[0][0],None,email,phone[0][0],address[0][0]).__dict__
+                session['User']=User(uid[0][0],name[0][0],None,email,phone[0][0],address[0][0],None,None).__dict__
                 g.db.commit()
                 g.db.close()
                 return render_template('index.html',currentuser=CurrentUser(),successmsg="Logged In!")
@@ -642,9 +677,9 @@ REGISTER PAGE VIEW
 def signuppage():
     try:
         if session['User']:
-            return render_template('login.html',msg="Already Logged in as "+CurrentUser().name+"!! Please Logout First!")
+            return render_template('login.html',msg="Already Logged in as "+CurrentUser()['name']+"!! Please Logout First!")
     except :
-        return render_template('signup.html',currentuser=CurrentUser())
+        return render_template('signup.html',currentuser=CurrentUser(),questions=questions())
 '''
 ########################################
 ########################################
@@ -671,15 +706,15 @@ def newuser():
     g.db = connect_db()
     try:
         if session['User']:
-            return render_template('login.html',msg="Already Logged in as "+CurrentUser().name+"!! Please Logout First!")
+            return render_template('login.html',msg="Already Logged in as "+CurrentUser()['name']+"!! Please Logout First!")
     except :
         init_check = g.db.execute('SELECT COUNT(*) FROM Users WHERE email = ?',[request.form['email']]).fetchall()
         if init_check[0][0] == 0:
             init_check=g.db.execute('SELECT COUNT(*) FROM Users WHERE phone = ?',[request.form['phone']]).fetchall()
             if init_check[0][0]==0:
                 passwordh = generate_password_hash(request.form['password'])
-                new_user=User(id=None,name=request.form['name'],password=passwordh,email=request.form['email'],phone=request.form['phone'],address=request.form['address'])
-                g.db.execute('INSERT INTO Users(name,password,email,phone,address) VALUES (?,?,?,?,?)',[new_user.name,passwordh,new_user.email,new_user.phone,new_user.address])
+                new_user=User(id=None,name=request.form['name'],password=passwordh,email=request.form['email'],phone=request.form['phone'],address=request.form['address'],s_id=request.form['question'],ans=request.form['answer'])
+                g.db.execute('INSERT INTO Users(name,password,email,phone,address,s_id,ans) VALUES (?,?,?,?,?,?,?)',[new_user.name,passwordh,new_user.email,new_user.phone,new_user.address,new_user.s_id,new_user.ans])
                 g.db.commit()
                 g.db.close()
                 return render_template('login.html',successmsg="Account Successfully Created! Please Login.",currentuser=CurrentUser())
@@ -1159,9 +1194,9 @@ DATABASE DEBUG PAGE
 '''
 @app.route('/debug')
 def databasedebug():
-    try:
+#    try:
         if CurrentUser()['id']==1:
-            try:
+#            try:
                 g.db = connect_db()
                 cursor = g.db.execute('SELECT * FROM Products;')
                 products = cursor.fetchall()
@@ -1197,13 +1232,18 @@ def databasedebug():
                 ptype = cursor.fetchall()
                 g.db.commit()
                 g.db.close()
-                return render_template('debug.html',users=users,products=products,ptype=ptype,orders=orders,carts=carts,cart_items=cart_items,status=status,currentuser=CurrentUser())
-            except:
-                return("Unexpected Error in database.")
+                g.db = connect_db()
+                cursor = g.db.execute('SELECT * FROM Questions;')
+                questions = cursor.fetchall()
+                g.db.commit()
+                g.db.close()
+                return render_template('debug.html',users=users,questions=questions,products=products,ptype=ptype,orders=orders,carts=carts,cart_items=cart_items,status=status,currentuser=CurrentUser())
+#            except:
+#                return("Unexpected Error in database.")
         else:
             return("Wow,You actually figured this out?? But,Access is Denied:)")
-    except:
-        return("Wow,You actually figured this out?? But,Access is Denied:)")
+#    except:
+#        return("Wow,You actually figured this out?? But,Access is Denied:)")
 '''
 ########################################
 ########################################
@@ -1490,13 +1530,26 @@ if __name__ == '__main__':
                 g.db.execute("DROP TABLE IF EXISTS Products;")
                 g.db.execute("DROP TABLE IF EXISTS Ptype;")
                 g.db.execute("DROP TABLE IF EXISTS Status;")
-                g.db.execute("CREATE TABLE IF NOT EXISTS Users (id integer PRIMARY KEY,name text NOT NULL,email text NOT NULL,phone numeric NOT NULL,address text NOT NULL,password text NOT NULL);")
+                g.db.execute("DROP TABLE IF EXISTS Questions;")
+                g.db.execute("CREATE TABLE IF NOT EXISTS Questions(id integer PRIMARY KEY,value text NOT NULL);")
+                g.db.execute("CREATE TABLE IF NOT EXISTS Users (id integer PRIMARY KEY,name text NOT NULL,email text NOT NULL,phone numeric NOT NULL,address text NOT NULL,password text NOT NULL,s_id integer NOT NULL,ans text NOT NULL,FOREIGN KEY(s_id) REFERENCES Questions(id));")
                 g.db.execute("CREATE TABLE IF NOT EXISTS Ptype (id integer PRIMARY KEY,value text NOT NULL);")
                 g.db.execute("CREATE TABLE IF NOT EXISTS Status (id integer PRIMARY KEY,value text NOT NULL);")
                 g.db.execute("CREATE TABLE IF NOT EXISTS Products (id integer PRIMARY KEY,name text NOT NULL,price integer NOT NULL,ptype_id integer NOT NULL,stock integer NOT NULL,FOREIGN KEY (ptype_id) REFERENCES Ptype (id) ON DELETE CASCADE);")
                 g.db.execute("CREATE TABLE IF NOT EXISTS Cart (id integer NOT NULL PRIMARY KEY,uid integer NOT NULL,status_id integer NOT NULL,FOREIGN KEY (uid) REFERENCES Users (id) ON DELETE CASCADE,FOREIGN KEY (status_id) REFERENCES Status (id));")
                 g.db.execute("CREATE TABLE IF NOT EXISTS Cart_Items (sl integer NOT NULL PRIMARY KEY,cart_id integer NOT NULL,p_id integer NOT NULL,quantity integer NOT NULL,p_total integer NOT NULL,FOREIGN KEY (p_id) REFERENCES Products (id) ON DELETE CASCADE,FOREIGN KEY (cart_id) REFERENCES Cart (id) ON DELETE CASCADE);")
                 g.db.execute("CREATE TABLE IF NOT EXISTS Orders (id integer PRIMARY KEY,uid integer NOT NULL,cart_id integer NOT NULL,total integer NOT NULL,order_date text NOT NULL,status_id integer NOT NULL,FOREIGN KEY (uid) REFERENCES Users (id) ON DELETE CASCADE,FOREIGN KEY (cart_id) REFERENCES Cart (id) ON DELETE CASCADE,FOREIGN KEY (status_id) REFERENCES Status (id));")
+                g.db.execute("INSERT INTO Questions(value) VALUES('What was your childhood nickname?');")
+                g.db.execute("INSERT INTO Questions(value) VALUES('Who was your childhood hero?');")
+                g.db.execute("INSERT INTO Questions(value) VALUES('What is the name of your current crush?');")
+                g.db.execute("INSERT INTO Questions(value) VALUES('What was your dream job?');")
+                g.db.execute("INSERT INTO Questions(value) VALUES('What is your preferred musical genre?');")
+                g.db.execute("INSERT INTO Questions(value) VALUES('What was the name of your second pet?');")
+                g.db.execute("INSERT INTO Questions(value) VALUES('Where were you born?');")
+                g.db.execute("INSERT INTO Questions(value) VALUES('What time of the day were you born?');")
+                g.db.execute("INSERT INTO Questions(value) VALUES('What is the name of your best friend?');")
+                g.db.execute("INSERT INTO Questions(value) VALUES('What was your favorite place to visit as a child?');")
+                g.db.execute("INSERT INTO Questions(value) VALUES('What is your favorite movie?');")
                 g.db.execute("INSERT INTO Status(value) VALUES('Not Ordered');")
                 g.db.execute("INSERT INTO Status(value) VALUES('Ordered');")
                 g.db.execute("INSERT INTO Status(value) VALUES('Cancelled');")

@@ -6,13 +6,104 @@
 
 
 {% block body %}
-Users : {{ users }}<br>
-Carts : {{ carts }}<br>
-Orders : {{ orders }}<br>
-Cart_Items : {{ cart_items }}<br>
+USERS :
+<table>
+        <tr>
+            <th style="font-size:1.5vmax;">ID</th>
+            <th style="font-size:1.5vmax;">Name</th>
+            <th style="font-size:1.5vmax;">Email</th>
+            <th style="font-size:1.5vmax;">Phone</th>
+            <th style="font-size:1.5vmax;">Address</th>
+            <th style="font-size:1.5vmax;">Password</th>
+            <th style="font-size:1.5vmax;">S_Id</th>
+            <th style="font-size:1.5vmax;">Ans</th>
+        </tr>
+        {% for i in users %}
+        <tr>
+            <td style="font-size:1vmax;">{{ i[0] }}</td>
+            <td style="font-size:1vmax;">{{ i[1] }}</td>
+            <td style="font-size:1vmax;">{{ i[2] }}</td>
+            <td style="font-size:1vmax;">{{ i[3] }}</td>
+            <td style="font-size:1vmax;">{{ i[4] }}</td>
+            <td style="font-size:1vmax;">{{ i[5] }}</td>
+            <td style="font-size:1vmax;">{{ i[6] }}</td>
+            <td style="font-size:1vmax;">{{ i[7] }}</td>
+        </tr>
+        {% endfor %}
+</table>
+Questions :
+<table>
+        <tr>
+            <th style="font-size:1.5vmax;">ID</th>
+            <th style="font-size:1.5vmax;">Question</th>
+        </tr>
+        {% for i in questions %}
+        <tr>
+            <td style="font-size:1vmax;">{{ i[0] }}</td>
+            <td style="font-size:1vmax;">{{ i[1] }}</td>
+        </tr>
+        {% endfor %}
+</table>
+CARTS :
+<table>
+        <tr>
+            <th style="font-size:1.5vmax;">ID</th>
+            <th style="font-size:1.5vmax;">U_ID</th>
+            <th style="font-size:1.5vmax;">STATUS_ID</th>
+        </tr>
+        {% for i in carts %}
+        <tr>
+            <td style="font-size:1vmax;">{{ i[0] }}</td>
+            <td style="font-size:1vmax;">{{ i[1] }}</td>
+            <td style="font-size:1vmax;">{{ i[2] }}</td>
+        </tr>
+        {% endfor %}
+</table>
+CART_ITEMS :
+<table>
+        <tr>
+            <th style="font-size:1.5vmax;">SL</th>
+            <th style="font-size:1.5vmax;">Cart_ID</th>
+            <th style="font-size:1.5vmax;">P_ID</th>
+            <th style="font-size:1.5vmax;">Quantity</th>
+            <th style="font-size:1.5vmax;">P_Total</th>
+        </tr>
+        {% for i in cart_items %}
+        <tr>
+            <td style="font-size:1vmax;">{{ i[0] }}</td>
+            <td style="font-size:1vmax;">{{ i[1] }}</td>
+            <td style="font-size:1vmax;">{{ i[2] }}</td>
+            <td style="font-size:1vmax;">{{ i[3] }}</td>
+            <td style="font-size:1vmax;">{{ i[4] }}</td>
+        </tr>
+        {% endfor %}
+</table>
+ORDERS :
+<table>
+        <tr>
+            <th style="font-size:1.5vmax;">ID</th>
+            <th style="font-size:1.5vmax;">UID</th>
+            <th style="font-size:1.5vmax;">CART_ID</th>
+            <th style="font-size:1.5vmax;">TOTAL</th>
+            <th style="font-size:1.5vmax;">ORDER DATE</th>
+            <th style="font-size:1.5vmax;">STATUS_ID</th>
+        </tr>
+        {% for i in orders %}
+        <tr>
+            <td style="font-size:1vmax;">{{ i[0] }}</td>
+            <td style="font-size:1vmax;">{{ i[1] }}</td>
+            <td style="font-size:1vmax;">{{ i[2] }}</td>
+            <td style="font-size:1vmax;">{{ i[3] }}</td>
+            <td style="font-size:1vmax;">{{ i[4] }}</td>
+            <td style="font-size:1vmax;">{{ i[5] }}</td>
+        </tr>
+        {% endfor %}
+</table>
+<br><br>
 Ptype : {{ ptype }}<br>
 Status : {{ status }}<br>
 Products : {{ products }}<br>
+
 
 
 {% endblock %}
