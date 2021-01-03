@@ -196,7 +196,7 @@
     .order #details #viewitems {
         display: inline-block;
         position: relative;
-        left: 20%;
+        left: 10%;
         width: 40%;
     }
     .order #details #viewitems a {
@@ -211,7 +211,7 @@
     .order #details #cancelorder {
         display: inline-block;
         position: relative;
-        left: 50%;
+        left: 40%;
         width: 43%;
         margin-top: 5%;
     }

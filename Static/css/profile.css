@@ -231,7 +231,7 @@
             display: flex;
             padding: 2px 10px;
             margin-top: 0%;
-            margin-left: 24%;
+            margin-left: 28%;
             font-size: 2em;
             width: 50%;
             position: relative;
@@ -244,7 +244,7 @@
             background-color: #0f0;
             padding: 2px 10px;
             margin-top: 0%;
-            margin-left: 22%;
+            margin-left: 26%;
             font-size: 2.2em;
             width: 50%;
             position: relative;
@@ -283,7 +283,7 @@
             display: flex;
             padding: 2px 10px;
             margin-top: 0%;
-            margin-left: 36%;
+            margin-left: 33%;
             font-size: 2em;
             width: fit-content;
             border-radius: 0.13em;
@@ -295,7 +295,7 @@
             display: flex;
             padding: 2px 10px;
             margin-top: 0%;
-            margin-left: 34%;
+            margin-left: 31%;
             font-size: 2.2em;
             width: fit-content;
             border-radius: 0.13em;
@@ -395,7 +395,7 @@
         padding: 2px 10px;
         text-align: center;
         margin-top: 0%;
-        margin-left: 24%;
+        margin-left: 28%;
         font-size: 2em;
         width: 50%;
         position: relative;
@@ -408,7 +408,7 @@
         display: flex;
         padding: 2px 10px;
         margin-top: 0%;
-        margin-left: 22%;
+        margin-left: 26%;
         font-size: 2.2em;
         width: 50%;
         position: relative;
@@ -422,7 +422,7 @@
         display: flex;
         padding: 2px 10px;
         margin-top: 0%;
-        margin-left: 36%;
+        margin-left: 33%;
         font-size: 2em;
         width: fit-content;
         border-radius: 0.13em;
@@ -434,7 +434,7 @@
         display: flex;
         padding: 2px 10px;
         margin-top: 0%;
-        margin-left: 34%;
+        margin-left: 31%;
         font-size: 2.2em;
         width: fit-content;
         animation-name: odelete;
