@@ -328,7 +328,7 @@
         font-weight: bold;
         padding: 0%;
         left: 5%;
-        width: 30%;
+        width: 80%;
         position: relative;
         top: 1%;
         color: #f80;
@@ -343,9 +343,19 @@
     }
     .profile #olinks {
         display: inline-block;
-        width: 100%;
-        margin-left: 50%;
+        width: 80%;
+        margin-left: 40%;
         color: #fff;
+        margin-top: 5%;
+    }
+    .profile #olinks #edit {
+        width: 30%
+    }
+    .profile #olinks #delete {
+        width: 30%
+    }
+    .profile #olinks #orders {
+        width: 30%
     }
     .profile #olinks #orders a {
         border: 0.13em solid #fff;
@@ -431,5 +441,13 @@
         color: #fff;
         margin-top: 5%;
         font-size: 1.7em;
+    }
+    body {
+        background-color: #000;
+        text-align: center;
+        font-size: 1.7vmax;
+        color: #fff;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }
