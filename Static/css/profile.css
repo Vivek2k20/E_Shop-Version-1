@@ -449,6 +449,39 @@
         margin-top: 5%;
         font-size: 1.7em;
     }
+    .profile #links #orders a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline-block;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 40%;
+        font-size: 1em;
+        width: fit-content;
+        border-radius: 0.13em;
+    }
+    .profile #links #edit a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline-block;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 40%;
+        font-size: 1em;
+        width: fit-content;
+        border-radius: 0.13em;
+    }
+    .profile #links #delete a {
+        border: 0.13em solid #fff;
+        color: #fff;
+        display: inline-block;
+        padding: 2px 10px;
+        margin-top: 0%;
+        margin-left: 40%;
+        font-size: 1em;
+        width: fit-content;
+        border-radius: 0.13em;
+    }
     body {
         background-color: #000;
         text-align: center;
