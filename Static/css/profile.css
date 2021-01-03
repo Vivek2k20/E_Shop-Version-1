@@ -223,7 +223,7 @@
     font-size: 1.2em;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     @keyframes oedit {
         0% {
             border: 0.13em solid #fff;
