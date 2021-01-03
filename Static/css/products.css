@@ -417,7 +417,7 @@ input[type="submit"] {
     .product #details a {
         border: 0.13em solid #fff;
         color: #fff;
-        display: inline;
+        display: inline-block;
         padding: 2px 10px;
         margin-left: 30%;
         font-size: 1em;
