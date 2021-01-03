@@ -170,6 +170,34 @@
 }
 
 @media only screen and (max-width: 600px) {
+    @keyframes viewitems {
+        0% {
+            border: 0.13em solid #fff;
+            background-color: #000;
+            color: #fff;
+            font-size: 1.3em;
+        }
+        100% {
+            border: 0.13em solid #0f0;
+            background-color: #0f0;
+            color: #000;
+            font-size: 1.4em;
+        }
+    }
+    @keyframes cancelorder {
+        0% {
+            border: 0.13em solid #fff;
+            background-color: #000;
+            color: #fff;
+            font-size: 1.3em;
+        }
+        100% {
+            border: 0.13em solid #f00;
+            background-color: #f00;
+            color: #000;
+            font-size: 1.4em;
+        }
+    }
     .order {
         border: #fff 0.13em solid;
         margin: 2% auto;
@@ -208,10 +236,18 @@
         font-size: 1.3em;
         border-radius: 0.13em;
     }
+    .order #details #viewitems a:hover {
+        background-color: #0f0;
+        color: #000;
+        animation-name: viewitems;
+        animation-duration: 0.5s;
+        border: 0.13em solid #0f0;
+        font-size: 1.4em;
+    }
     .order #details #cancelorder {
         display: inline-block;
         position: relative;
-        left: 45%;
+        left: 47%;
         width: 43%;
         margin-top: 5%;
     }
@@ -223,5 +259,13 @@
         margin-left: 0%;
         font-size: 1.3em;
         border-radius: 0.13em;
+    }
+    .order #details #cancelorder a:hover {
+        background-color: #f00;
+        color: #000;
+        animation-name: cancelorder;
+        animation-duration: 0.5s;
+        border: 0.13em solid #f00;
+        font-size: 1.4em;
     }
 }
