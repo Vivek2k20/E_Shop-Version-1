@@ -228,7 +228,7 @@
         0% {
             border: 0.13em solid #fff;
             color: #fff;
-            display: inline;
+            display: flex;
             padding: 2px 10px;
             margin-top: 0%;
             margin-left: 4%;
@@ -240,11 +240,11 @@
         100% {
             border: 0.13em solid #0f0;
             color: #000;
-            display: inline;
+            display: flex;
             background-color: #0f0;
             padding: 2px 10px;
             margin-top: 0%;
-            margin-left: 4%;
+            margin-left: 0%;
             font-size: 2.2em;
             width: 50%;
             position: relative;
@@ -255,7 +255,7 @@
         0% {
             border: 0.13em solid #fff;
             color: #fff;
-            display: inline;
+            display: flex;
             padding: 2px 10px;
             margin-top: 0%;
             margin-left: 20%;
@@ -267,10 +267,10 @@
             border: 0.13em solid #f80;
             background-color: #f80;
             color: #000;
-            display: inline;
+            display: flex;
             padding: 2px 10px;
             margin-top: 0%;
-            margin-left: 20%;
+            margin-left: 15%;
             font-size: 2.2em;
             width: fit-content;
             border-radius: 0.13em;
@@ -280,7 +280,7 @@
         0% {
             border: 0.13em solid #fff;
             color: #fff;
-            display: inline;
+            display: flex;
             padding: 2px 10px;
             margin-top: 0%;
             margin-left: 16%;
@@ -292,10 +292,10 @@
             border: 0.13em solid #f00;
             background-color: #f00;
             color: #000;
-            display: inline;
+            display: flex;
             padding: 2px 10px;
             margin-top: 0%;
-            margin-left: 16%;
+            margin-left: 11%;
             font-size: 2.2em;
             width: fit-content;
             border-radius: 0.13em;
@@ -343,24 +343,30 @@
     }
     .profile #olinks {
         display: inline-block;
-        width: 80%;
+        width: 60%;
         margin-left: 40%;
         color: #fff;
         margin-top: 5%;
     }
     .profile #olinks #edit {
-        width: 30%
+        width: 30%;
+        position: relative;
+        display: inline;
     }
     .profile #olinks #delete {
-        width: 30%
+        width: 30%;
+        position: relative;
+        display: inline;
     }
     .profile #olinks #orders {
-        width: 30%
+        width: 30%;
+        position: relative;
+        display: inline;
     }
     .profile #olinks #orders a {
         border: 0.13em solid #fff;
         color: #fff;
-        display: inline;
+        display: flex;
         padding: 2px 10px;
         margin-top: 0%;
         margin-left: 20%;
@@ -372,10 +378,10 @@
         border: 0.13em solid #f80;
         background-color: #f80;
         color: #000;
-        display: inline;
+        display: flex;
         padding: 2px 10px;
         margin-top: 0%;
-        margin-left: 20%;
+        margin-left: 15%;
         font-size: 2.2em;
         width: fit-content;
         animation-name: oorder;
@@ -385,10 +391,11 @@
     .profile #olinks #edit a {
         border: 0.13em solid #fff;
         color: #fff;
-        display: inline;
+        display: flex;
         padding: 2px 10px;
+        text-align: center;
         margin-top: 0%;
-        margin-left: 4%;
+        margin-left: 6%;
         font-size: 2em;
         width: 50%;
         position: relative;
@@ -398,10 +405,10 @@
         border: 0.13em solid #0f0;
         background-color: #0f0;
         color: #000;
-        display: inline;
+        display: flex;
         padding: 2px 10px;
         margin-top: 0%;
-        margin-left: 4%;
+        margin-left: 0%;
         font-size: 2.2em;
         width: 50%;
         position: relative;
@@ -412,10 +419,10 @@
     .profile #olinks #delete a {
         border: 0.13em solid #fff;
         color: #fff;
-        display: inline;
+        display: flex;
         padding: 2px 10px;
         margin-top: 0%;
-        margin-left: 16%;
+        margin-left: 14%;
         font-size: 2em;
         width: fit-content;
         border-radius: 0.13em;
@@ -424,10 +431,10 @@
         border: 0.13em solid #f00;
         background-color: #f00;
         color: #000;
-        display: inline;
+        display: flex;
         padding: 2px 10px;
         margin-top: 0%;
-        margin-left: 16%;
+        margin-left: 11%;
         font-size: 2.2em;
         width: fit-content;
         animation-name: odelete;
