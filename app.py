@@ -367,7 +367,7 @@ def CreateOrder(cart_id):
     if statusofcart!=1:
         return(1)
     else:
-        args=[int(CurrentUser()['id']),cart_id,CurrentCart_total(),datetime.now().strftime("%d-%m-%Y %H:%M:%S"),2]
+        args=[int(CurrentUser()['id']),cart_id,CurrentCart_total(),datetime.now(ind).strftime("%d-%m-%Y %H:%M:%S"),2]
         g.db = connect_db()
         g.db.execute('INSERT INTO Orders(uid,cart_id,total,order_date,status_id) VALUES (?,?,?,?,?)',args)
         g.db.commit()
