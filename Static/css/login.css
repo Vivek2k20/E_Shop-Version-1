@@ -10,6 +10,7 @@
         border: 0.15em solid #fff;
         border-radius: 0.13em;
         padding-top: 0%;
+        background-color: #000;
         padding-bottom: 2%;
         padding-left: 1%;
         padding-right: 1%;
@@ -24,6 +25,10 @@
         color: #f60
     }
     
+    .loginform #actualform a:hover {
+        text-decoration: underline;
+    }
+    
     .regform {
         margin-top: 5%;
         margin-left: 35%;
@@ -31,6 +36,7 @@
         border: 0.15em solid #fff;
         border-radius: 0.13em;
         padding-top: 0%;
+        background-color: #000;
         padding-bottom: 2%;
         padding-left: 1%;
         padding-right: 1%;
@@ -49,13 +55,6 @@
         padding-bottom: 2%;
     }
     
-    body {
-        background-color: #000;
-        text-align: center;
-        font-size: 1.7vmax;
-        color: #fff;
-    }
-    
     label {
         display: block;
     }
@@ -64,6 +63,7 @@
     input[type="password"],
     input[type="tel"],
     input[type="text"],
+    select,
     textarea {
         padding: 10px;
         border: 0;
@@ -79,6 +79,7 @@
     input[type="password"]:focus,
     input[type="tel"]:focus,
     input[type="text"]:focus,
+    select:focus,
     textarea:focus {
         background-color: #192a56;
         color: #0097e6;
@@ -98,6 +99,7 @@
     input[type="password"]:hover,
     input[type="tel"]:hover,
     input[type="text"]:hover,
+    select:hover,
     textarea:hover {
         background-color: #192a56;
         color: #0097e6;
@@ -123,6 +125,7 @@
             padding-top: 0%;
             padding-bottom: 2%;
             padding-left: 1%;
+            background-color: #000;
             padding-right: 1%;
             font-size: 3vmax;
         }
@@ -141,6 +144,7 @@
             border-radius: 0.13em;
             padding-top: 0%;
             padding-bottom: 2%;
+            background-color: #000;
             padding-left: 1%;
             padding-right: 1%;
             font-size: 3vmax;

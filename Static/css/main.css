@@ -278,6 +278,8 @@ a {
 body {
     background-color: #000;
     text-align: center;
+    background-image: url("bg2.jpg");
+    background-size: 100%;
     font-size: 1.7vmax;
     color: #fff;
 }
@@ -381,5 +383,13 @@ body {
         margin-left: 20%;
         text-align: left;
         font-size: 1.3em;
+    }
+    body {
+        background-color: #000;
+        text-align: center;
+        background-image: url("mob bg.jpg");
+        background-size: 100%;
+        font-size: 1.7vmax;
+        color: #fff;
     }
 }

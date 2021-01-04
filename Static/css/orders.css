@@ -31,6 +31,7 @@
 .order {
     border: #fff 0.13em solid;
     margin: 2% auto;
+    background-color: #000;
     text-align: left;
     border-radius: 0.13em;
 }
@@ -119,6 +120,7 @@
 
 .ordered_items {
     color: #0097e6;
+    background-color: #000;
     font-weight: bold;
     font-size: 1.3em;
     text-align: left;
@@ -128,6 +130,7 @@
 
 .ordersummary {
     margin: 2% auto;
+    background-color: #000;
     text-align: left;
     border-radius: 0.13em;
 }
@@ -201,6 +204,7 @@
     .order {
         border: #fff 0.13em solid;
         margin: 2% auto;
+        background-color: #000;
         text-align: left;
         border-radius: 0.13em;
     }

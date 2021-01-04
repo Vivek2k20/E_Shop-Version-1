@@ -63,6 +63,7 @@
 .product {
     border: #fff 0.13em solid;
     margin: 2% auto;
+    background-color: #000;
     text-align: left;
     border-radius: 0.13em;
 }
@@ -225,6 +226,7 @@
     position: fixed;
     bottom: 0%;
     color: #0097e6;
+    background-color: #000;
     display: block;
     border-top: 0.13em #f80 solid;
     margin: 0%;
@@ -271,6 +273,12 @@
 
 .AddProductsLink a {
     color: #f80;
+}
+
+input[type="number"] {
+    padding: 1px 2px;
+    background-color: #0097e6;
+    color: #000;
 }
 
 input[type="submit"]:hover {
@@ -394,6 +402,7 @@ input[type="submit"] {
         border: #fff 0.13em solid;
         margin: 5% auto;
         text-align: left;
+        background-color: #000;
         border-radius: 0.13em;
     }
     .product #h2 {
@@ -435,7 +444,9 @@ input[type="submit"] {
     input[type="number"] {
         padding: 1px 2px;
         position: relative;
-        width: 20%
+        width: 20%;
+        background-color: #0097e6;
+        color: #000;
     }
     input[type="submit"] {
         background-color: #000;
@@ -533,6 +544,7 @@ input[type="submit"] {
     .carttotal {
         font-weight: bold;
         position: fixed;
+        background-color: #000;
         bottom: 0%;
         color: #0097e6;
         display: block;
