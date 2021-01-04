@@ -1301,7 +1301,7 @@ def editprofile():
                 g.db.commit()
                 g.db.close()
                 if init_check[0][0]<=1:
-                    new_user=User(id=None,name=request.form['name'],password=None,email=request.form['email'],phone=request.form['phone'],address=request.form['address'])
+                    new_user=User(id=None,name=request.form['name'],password=None,email=request.form['email'],phone=request.form['phone'],address=request.form['address'],s_id=None,ans=None)
                     g.db = connect_db()
                     g.db.execute('UPDATE Users SET name=?,email=?,phone=?,address=? WHERE id=?;',[new_user.name,new_user.email,new_user.phone,new_user.address,CurrentUser()['id']])
                     g.db.commit()
@@ -1313,7 +1313,7 @@ def editprofile():
                     email=request.form['email']
                     phone=g.db.execute('SELECT phone FROM Users WHERE email = ?',[request.form['email']]).fetchall()
                     address=g.db.execute('SELECT address FROM Users WHERE email = ?',[request.form['email']]).fetchall()
-                    session['User']=User(uid[0][0],name[0][0],None,email,phone[0][0],address[0][0]).__dict__
+                    session['User']=User(uid[0][0],name[0][0],None,email,phone[0][0],address[0][0],None,None).__dict__
                     g.db.commit()
                     g.db.close()
                     return render_template('profile.html',successmsg="Account Updated Successfully!",msg="",currentuser=CurrentUser())
@@ -1438,15 +1438,78 @@ def deleteprofile():
             return("Session User cannot be None!")
     except:
         return("Exception during deleting account!")
-
-
-
 '''
 ########################################
 ########################################
 '''
 
 
+
+
+
+
+
+
+
+
+
+
+
+'''
+#######################################
+RESET PASSWORD VIEW
+#######################################
+'''
+@app.route('/resetpassword',methods=['GET'])
+def resetpasswordview():
+    try:
+        if session['User']:
+            return render_template('resetpassword.html',currentuser=CurrentUser(),successmsg="")
+        else:
+             return("Session User Cannot be None!")
+    except:
+        return render_template('login.html',currentuser=CurrentUser(),msg="Please Login to reset your password!")
+'''
+########################################
+########################################
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+#######################################
+RESET PASSWORD Operation
+#######################################
+'''
+@app.route('/resetpassword',methods=['POST'])
+def resetpassword():
+    try:
+        if session['User']:
+                    passwordh = generate_password_hash(request.form['password'])
+                    g.db = connect_db()
+                    g.db.execute('UPDATE Users SET password=? WHERE id=?;',[passwordh,CurrentUser()['id']])
+                    g.db.commit()
+                    g.db.close()
+                    return render_template('profile.html',successmsg="Password Updated Successfully!",msg="",currentuser=CurrentUser())
+        else:
+             return("Session User Cannot be None!")
+    except:
+        return render_template('login.html',currentuser=CurrentUser(),msg="Please Login to reset your password!")
+'''
+########################################
+########################################
+'''
 
 
 

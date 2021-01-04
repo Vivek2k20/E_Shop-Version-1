@@ -43,6 +43,37 @@
     }
 }
 
+@keyframes impchange {
+    0% {
+        border: 0.13em solid #fff;
+        background-color: #000;
+        color: #fff;
+        font-size: 1em;
+    }
+    100% {
+        border: 0.13em solid #0097e6;
+        background-color: #0097e6;
+        color: #000;
+        font-size: 1.2em;
+    }
+}
+
+@keyframes impchange2 {
+    0% {
+        border: 0.13em solid #fff;
+        background-color: #000;
+        color: #fff;
+        font-size: 1em;
+        width: 40%
+    }
+    100% {
+        border: 0.13em solid #0097e6;
+        background-color: #0097e6;
+        color: #000;
+        width: 50% font-size: 1.2em;
+    }
+}
+
 .profile {
     text-align: left;
     font-size: 1em;
@@ -77,7 +108,7 @@
 .profile #links {
     display: inline-block;
     width: 30%;
-    margin-left: 70%;
+    margin-left: 65%;
     color: #fff;
 }
 
@@ -142,6 +173,49 @@
     animation-duration: 0.5s;
     border: 0.13em solid #f00;
     font-size: 1.2em;
+}
+
+.profile #links #impchangep a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline-block;
+    padding: 2px 10px;
+    margin-top: 0%;
+    margin-left: 40%;
+    font-size: 1em;
+    width: fit-content;
+    border-radius: 0.13em;
+}
+
+.profile #links #impchangep a:hover {
+    background-color: #0097e6;
+    color: #000;
+    animation-name: impchange;
+    animation-duration: 0.5s;
+    font-size: 1.2em;
+    border: 0.13em solid #0097e6;
+}
+
+.profile #links #impchangeq a {
+    border: 0.13em solid #fff;
+    color: #fff;
+    display: inline-block;
+    padding: 2px 10px;
+    margin-top: 0%;
+    margin-left: 40%;
+    font-size: 1em;
+    width: 40%;
+    border-radius: 0.13em;
+}
+
+.profile #links #impchangeq a:hover {
+    background-color: #0097e6;
+    color: #000;
+    animation-name: impchange2;
+    animation-duration: 0.5s;
+    font-size: 1.2em;
+    width: 50%;
+    border: 0.13em solid #0097e6;
 }
 
 .confirmorderheading {
