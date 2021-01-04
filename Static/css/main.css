@@ -385,10 +385,9 @@ body {
         font-size: 1.3em;
     }
     body {
-        background-color: #000;
         text-align: center;
-        background-image: url("mob bg.jpg");
-        background-size: 100%;
+        background-image: url("bg2.jpg");
+        background-size: 400%;
         font-size: 1.7vmax;
         color: #fff;
     }
