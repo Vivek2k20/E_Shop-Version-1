@@ -644,7 +644,7 @@ def loginuser():
                 session['User']=User(uid[0][0],name[0][0],None,email,phone[0][0],address[0][0],None,None).__dict__
                 g.db.commit()
                 g.db.close()
-                return render_template('index.html',currentuser=CurrentUser(),successmsg="Logged In!")
+                return render_template('index.html',currentuser=CurrentUser(),successmsg="Welcome "+CurrentUser()['name']+".")
             else:
                 g.db.rollback()
                 g.db.close()
@@ -713,7 +713,7 @@ def newuser():
             init_check=g.db.execute('SELECT COUNT(*) FROM Users WHERE phone = ?',[request.form['phone']]).fetchall()
             if init_check[0][0]==0:
                 passwordh = generate_password_hash(request.form['password'])
-                new_user=User(id=None,name=request.form['name'],password=passwordh,email=request.form['email'],phone=request.form['phone'],address=request.form['address'],s_id=request.form['question'],ans=request.form['answer'])
+                new_user=User(id=None,name=request.form['name'],password=passwordh,email=request.form['email'],phone=request.form['phone'],address=request.form['address'],s_id=request.form['question'],ans=request.form['answer'].lower())
                 g.db.execute('INSERT INTO Users(name,password,email,phone,address,s_id,ans) VALUES (?,?,?,?,?,?,?)',[new_user.name,passwordh,new_user.email,new_user.phone,new_user.address,new_user.s_id,new_user.ans])
                 g.db.commit()
                 g.db.close()
@@ -1519,6 +1519,84 @@ def resetpassword():
 
 
 
+
+
+
+
+
+
+'''
+#######################################
+FORGOT PASSWORD PAGE VIEW
+#######################################
+'''
+@app.route('/forgotpassword',methods=['GET'])
+def forgotpasswordview():
+    return render_template('forgotpassword.html',currentuser=CurrentUser(),questions=questions(),msg="")
+'''
+########################################
+########################################
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+#######################################
+FORGOT PASSWORD PAGE OPERATION
+#######################################
+'''
+@app.route('/forgotpassword',methods=['POST'])
+def forgotpassword():
+    g.db = connect_db()
+    try:
+        if session['User'] :
+            return render_template('login.html',msg="Already Signed in as "+CurrentUser().name+"!! Please Logout First!")
+    except :
+        cursor = g.db.execute('SELECT s_id,ans FROM Users WHERE email = ?',[request.form['email']])
+        auth = cursor.fetchall()
+        try:
+            if auth[0][0]==int(request.form['question']) and auth[0][1].lower()==str(request.form['answer']).lower():
+                uid = g.db.execute('SELECT id FROM Users WHERE email = ?',[request.form['email']]).fetchall()
+                name= g.db.execute('SELECT name FROM Users WHERE email = ?',[request.form['email']]).fetchall()
+                email=request.form['email']
+                phone=g.db.execute('SELECT phone FROM Users WHERE email = ?',[request.form['email']]).fetchall()
+                address=g.db.execute('SELECT address FROM Users WHERE email = ?',[request.form['email']]).fetchall()
+                session['User']=User(uid[0][0],name[0][0],None,email,phone[0][0],address[0][0],None,None).__dict__
+                g.db.commit()
+                g.db.close()
+                return render_template('resetpassword.html',currentuser=CurrentUser(),successmsg="Welcome "+CurrentUser()['name']+". Please choose a new password.")
+            else:
+                g.db.rollback()
+                g.db.close()
+                return render_template('forgotpassword.html',currentuser=CurrentUser(),msg="Incorrect Secret Question or answer!"+str(request.form['question'])+" and "+auth[0][1].lower()+request.form['answer'].lower(),questions=questions())
+        except :
+            return render_template('forgotpassword.html',currentuser=CurrentUser(),msg="Invalid Email! Please Register if not done.",questions=questions())
+'''
+########################################
+########################################
+'''
+
+
+
+
+
+
+
+
+
+
 '''
 #######################################
 ABOUT PAGE VIEW
@@ -1541,8 +1619,6 @@ def about():
 
 
 
-
-
 '''
 #######################################
 LOGOUT 
@@ -1552,8 +1628,9 @@ LOGOUT
 def logout():
     try:
         if session['User']:
+            a=CurrentUser()['name']
             session.pop('User',None)
-            return render_template('index.html',currentuser=CurrentUser(),successmsg="Logged Out Succesfully!")
+            return render_template('index.html',currentuser=CurrentUser(),successmsg="Thank you for shopping "+a+"!")
         else:
             return render_template('login.html',msg="Please Log in first!",currentuser=CurrentUser())
     except:
