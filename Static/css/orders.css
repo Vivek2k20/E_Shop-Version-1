@@ -251,7 +251,7 @@
     .order #details #cancelorder {
         display: inline-block;
         position: relative;
-        left: 47%;
+        left: 45%;
         width: 43%;
         margin-top: 5%;
     }
@@ -260,7 +260,8 @@
         color: #fff;
         display: inline-block;
         padding: 2px 10px;
-        margin-left: 0%;
+        margin-left: 2%;
+        width: 80%;
         font-size: 1.3em;
         border-radius: 0.13em;
     }
@@ -269,6 +270,7 @@
         color: #000;
         animation-name: cancelorder;
         animation-duration: 0.5s;
+        width: 85%;
         border: 0.13em solid #f00;
         font-size: 1.4em;
     }
