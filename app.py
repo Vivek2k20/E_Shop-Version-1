@@ -10,23 +10,36 @@ import sqlite3
 from datetime import datetime
 import pytz
 from pytz import timezone
-app = Flask(__name__,template_folder = 'Templates',static_folder='Static')
-app.config['SECRET_KEY'] = "@\xec\xf7\t6\xe9mVc8\x1a\xad\xa2\xf2``TT\xb1SU\xf8\x14W"
 import os
 import requests
+from flask_cachebuster import CacheBuster
+"""
+########################################
+########################################
+"""
+
+
+
+
+
+
+
+
+"""
+##########################################
+CONFIGURING APP
+##########################################
+"""
+app = Flask(__name__,template_folder = 'Templates',static_folder='Static')
+app.config['SECRET_KEY'] = "@\xec\xf7\t6\xe9mVc8\x1a\xad\xa2\xf2``TT\xb1SU\xf8\x14W"
+config = { 'extensions': ['.js', '.css', '.csv'], 'hash_size': 5 }
+cache_buster = CacheBuster(config=config)
+cache_buster.init_app(app)
 ind=timezone('Asia/Kolkata')
-
-
-
 """
 ########################################
 ########################################
 """
-
-
-
-
-
 
 
 
