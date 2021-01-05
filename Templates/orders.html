@@ -10,6 +10,7 @@
 {% if orders|length <1 %}
     <h4 style="font-size:1.5vmax;">No orders have been placed yet!</h4>
 {% else %}
+    <div class="pagehead" id="pagehead">Confirm Order</div>
     {% for i in orders %}
         <div class="order" id="order ">
             <div id="h2" ><u>Order Id #{{ i[0] }}</u></div>

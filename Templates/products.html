@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
+<title>Products</title>
 {% endblock %}
 
 {% block body %}
@@ -9,6 +9,7 @@
 {% if products|length <1 %}
     <div class="noitemincart">Sorry! No products found!</div>
 {% else %}
+    <div class="pagehead" id="pagehead">Products</div>
     {% for i in products %}
         <div class="product" id="product ">
             <div id="h2" ><u>{{ i[1] }}</u></div>

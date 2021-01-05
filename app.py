@@ -644,7 +644,7 @@ def loginuser():
                 session['User']=User(uid[0][0],name[0][0],None,email,phone[0][0],address[0][0],None,None).__dict__
                 g.db.commit()
                 g.db.close()
-                return render_template('index.html',currentuser=CurrentUser(),successmsg="Welcome "+CurrentUser()['name']+".")
+                return render_template('index.html',currentuser=CurrentUser(),successmsg="Welcome,"+CurrentUser()['name']+".")
             else:
                 g.db.rollback()
                 g.db.close()
@@ -1630,7 +1630,7 @@ def logout():
         if session['User']:
             a=CurrentUser()['name']
             session.pop('User',None)
-            return render_template('index.html',currentuser=CurrentUser(),successmsg="Thank you for shopping "+a+"!")
+            return render_template('index.html',currentuser=CurrentUser(),successmsg="Thank you for shopping,"+a+"!")
         else:
             return render_template('login.html',msg="Please Log in first!",currentuser=CurrentUser())
     except:

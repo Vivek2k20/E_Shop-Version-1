@@ -156,6 +156,7 @@
             font-size: 2.7vmax;
             color: #f60
         }
+        select,
         textarea {
             padding: 10px;
             border: 0;

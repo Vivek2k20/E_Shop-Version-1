@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
+<title>Order ID #{{ order[0][0] }}</title>
 {% endblock %}
 
 
 {% block body %}
 <link rel="stylesheet" href="{{ url_for('static',filename='css/orders.css')}}">
+<div class="pagehead" id="pagehead">Order Details :</div>
 <div class="ordersummary" id="ordersummary ">
     <div id="h2" >ORDER ID #{{ order[0][0] }}</div>
     <div id="details">

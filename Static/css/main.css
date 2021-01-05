@@ -115,6 +115,15 @@
     font-size: large;
 }
 
+.pagehead {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff0;
+    text-align: left;
+    position: relative;
+    top: 10px;
+}
+
 table,
 td,
 th {

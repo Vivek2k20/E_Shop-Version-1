@@ -7,6 +7,7 @@
 
 {% block body %}
 <link rel="stylesheet" href="{{ url_for('static',filename='css/profile.css')}}">
+<div class="pagehead" id="pagehead">Your Profile</div>
 <div class="profile" id="profile">
     <div id="name">{{currentuser['name']}}</div><br>
     <div id="details">
@@ -18,7 +19,6 @@
         <div id="orders"><a href="/orders">Orders</a></div><br>
         <div id="edit"><a href="/editprofile" id="edit">Edit Profile</a></div><br>
         <div id="impchangep"><a href="/resetpassword">Reset Password</a></div><br>
-        <div id="impchangeq"><a href="/changesecretquestion">Change Secret Question/Answer</a></div><br>
         <div id="delete"><a href="/deleteprofile" id="delete">Delete</a></div><br>
     </div>
 </div>
