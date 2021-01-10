@@ -10,22 +10,30 @@ import sqlite3
 from datetime import datetime
 import pytz
 from pytz import timezone
-app = Flask(__name__,template_folder = 'Templates',static_folder='Static')
-app.config['SECRET_KEY'] = "@\xec\xf7\t6\xe9mVc8\x1a\xad\xa2\xf2``TT\xb1SU\xf8\x14W"
 import os
 import requests
+from flask_cachebuster import CacheBuster
+"""
+########################################
+########################################
+"""
+
+
+
+
+
+
+"""
+########################################
+CONFIGURING APP
+########################################
+"""
+app = Flask(__name__,template_folder = 'Templates',static_folder='Static')
+app.config['SECRET_KEY'] = "@\xec\xf7\t6\xe9mVc8\x1a\xad\xa2\xf2``TT\xb1SU\xf8\x14W"
 ind=timezone('Asia/Kolkata')
-
-
-
-"""
-########################################
-########################################
-"""
-
-
-
-
+config = { 'extensions': ['.js', '.css', '.csv'], 'hash_size': 5 }
+cache_buster = CacheBuster(config=config)
+cache_buster.init_app(app)
 
 
 
@@ -34,7 +42,7 @@ ind=timezone('Asia/Kolkata')
 
 """"
 ########################################
-Connection to Database (FUNCTIONS)
+CONNECTION TO DATABASE (FUNCTIONS)
 ########################################
 """
 def connect_db():
@@ -602,7 +610,7 @@ LOGIN PAGE VIEW
 def login():
     try:
         if session['User']:
-            return render_template('login.html',msg="Already Logged in as "+CurrentUser().name+"!! Please Logout First!")
+            return render_template('index.html',msg="Already Logged in as "+CurrentUser().name+"!! Please Logout First!")
     except :
         return render_template('login.html',currentuser=CurrentUser())
 '''
@@ -633,7 +641,7 @@ def loginuser():
     g.db = connect_db()
     try:
         if session['User'] :
-            return render_template('login.html',msg="Already Signed in as "+CurrentUser().name+"!! Please Logout First!")
+            return render_template('index.html',msg="Already Signed in as "+CurrentUser().name+"!! Please Logout First!")
     except :
         cursor = g.db.execute('SELECT password FROM Users WHERE email = ?',[request.form['email']])
         passwordh = cursor.fetchall()
@@ -1186,6 +1194,29 @@ def vieworderdetails(id):
 
 
 
+'''
+########################################
+VIEW FILLED CONTACTFORMS
+########################################
+'''
+@app.route('/msgs')
+def msgs():
+    try:
+        if CurrentUser()['id']==1:
+            try:
+                g.db = connect_db()
+                cursor = g.db.execute('SELECT * FROM ContactForm;')
+                messages = cursor.fetchall()
+                g.db.commit()
+                g.db.close()
+                return render_template('msgs.html',messages=messages,currentuser=CurrentUser())
+            except:
+                return("Unexpected Error in database.")
+        else:
+            return render_template(url_for(home))
+    except:
+        return render_template(url_for(home))
+
 
 
 
@@ -1197,9 +1228,9 @@ DATABASE DEBUG PAGE
 '''
 @app.route('/debug')
 def databasedebug():
-#    try:
+    try:
         if CurrentUser()['id']==1:
-#            try:
+            try:
                 g.db = connect_db()
                 cursor = g.db.execute('SELECT * FROM Products;')
                 products = cursor.fetchall()
@@ -1241,12 +1272,12 @@ def databasedebug():
                 g.db.commit()
                 g.db.close()
                 return render_template('debug.html',users=users,questions=questions,products=products,ptype=ptype,orders=orders,carts=carts,cart_items=cart_items,status=status,currentuser=CurrentUser())
-#            except:
-#                return("Unexpected Error in database.")
+            except:
+                return("Unexpected Error in database.")
         else:
-            return("Wow,You actually figured this out?? But,Access is Denied:)")
-#    except:
-#        return("Wow,You actually figured this out?? But,Access is Denied:)")
+            return render_template(url_for(home))
+    except:
+        return render_template(url_for(home))
 '''
 ########################################
 ########################################
@@ -1616,6 +1647,37 @@ def about():
 
 
 
+
+
+
+
+
+
+
+'''
+#######################################
+CONTACT US FORM SUBMISSION
+#######################################
+'''
+@app.route('/about',methods=['POST'])
+def contactusformsubmit():
+    g.db = connect_db()
+    name=request.form['name']
+    message=request.form['message']
+    uid=0
+    try:
+        if session['User']:
+            uid=CurrentUser()['id']
+    except:
+        pass
+    g.db.execute('INSERT INTO ContactForm(name,msg,uid) VALUES (?,?,?)',[name,message,uid])
+    g.db.commit()
+    g.db.close()
+    return render_template('about.html',currentuser=CurrentUser(),successmsg="Thanks for Contacting Us,"+name)
+'''
+########################################
+########################################
+'''
 
 
 

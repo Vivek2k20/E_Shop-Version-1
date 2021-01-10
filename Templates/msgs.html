@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+Your Messages :
+<table>
+        <tr>
+            <th style="font-size:1.5vmax;">Sl.No</th>
+            <th style="font-size:1.5vmax;">Name</th>
+            <th style="font-size:1.5vmax;">Message</th>
+            <th style="font-size:1.5vmax;">UID</th>
+        </tr>
+        {% for i in messages %}
+        <tr>
+            <td style="font-size:1vmax;">{{ i[0] }}</td>
+            <td style="font-size:1vmax;">{{ i[1] }}</td>
+            <td style="font-size:1vmax;">{{ i[2] }}</td>
+            <td style="font-size:1vmax;">{{ i[3] }}</td>
+        </tr>
+        {% endfor %}
+</table>
+
+
+{% endblock %}

@@ -14,6 +14,36 @@
     font-size: 1.3vmax;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding-left: 1em;
+    text-indent: -.7em;
+}
+
+li::before {
+    content: "• ";
+    color: #fff;
+}
+
+a {
+    color: #f80;
+}
+
+a:hover {
+    color: #0f0;
+    text-decoration: underline;
+}
+
+body {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 @media only screen and (max-width: 600px) {
     .profile {
         text-align: left;
@@ -28,5 +58,9 @@
         margin-left: 15%;
         position: relative;
         font-size: 1.3em;
+    }
+    body {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }
