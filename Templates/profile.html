@@ -15,6 +15,9 @@
     Address : {{currentuser['address']}}
     </div>
     <div id="links">
+        {% if currentuser['id']==1 %}
+               <div id="orders"><a href="/msgs">Messages</a></div><br>
+        {% endif %}
         <div id="orders"><a href="/orders">Orders</a></div><br>
         <div id="edit"><a href="/editprofile" id="edit">Edit Profile</a></div><br>
         <div id="impchangep"><a href="/resetpassword">Reset Password</a></div><br>
