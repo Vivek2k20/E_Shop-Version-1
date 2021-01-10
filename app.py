@@ -10,36 +10,23 @@ import sqlite3
 from datetime import datetime
 import pytz
 from pytz import timezone
-import os
-import requests
-from flask_cachebuster import CacheBuster
-"""
-########################################
-########################################
-"""
-
-
-
-
-
-
-
-
-"""
-##########################################
-CONFIGURING APP
-##########################################
-"""
 app = Flask(__name__,template_folder = 'Templates',static_folder='Static')
 app.config['SECRET_KEY'] = "@\xec\xf7\t6\xe9mVc8\x1a\xad\xa2\xf2``TT\xb1SU\xf8\x14W"
-config = { 'extensions': ['.js', '.css', '.csv'], 'hash_size': 5 }
-cache_buster = CacheBuster(config=config)
-cache_buster.init_app(app)
+import os
+import requests
 ind=timezone('Asia/Kolkata')
+
+
+
 """
 ########################################
 ########################################
 """
+
+
+
+
+
 
 
 
@@ -490,7 +477,7 @@ def changestatusofordertocancelled(id):
 ########################################
 ########################################
 """
-      
+
 
 
 
@@ -589,10 +576,13 @@ PROFILE PAGE VIEW
 '''
 @app.route('/profile')
 def profilepage():
-    if session['User']:
-        return render_template('profile.html',currentuser=CurrentUser())
-    else :
-        return redirect(url_for('login'),msg="Log In to Access this Page!",currentuser=CurrentUser())
+    try:
+        if session['User']:
+           return render_template('profile.html',currentuser=CurrentUser())
+        else :
+           return render_template('login.html',msg="Log In to Access this Page!",currentuser=CurrentUser())
+    except:
+        return render_template('login.html',msg="Log In to Acces this Page!",currentuser=CurrentUser())
 '''
 ##########################################
 ##########################################
@@ -839,7 +829,7 @@ def addtocartview(pid):
                 g.db.rollback()
                 g.db.close()
                 return ("Exception occured")
-        else : 
+        else :
             return render_template('login.html',currentuser=CurrentUser(),msg="Please Login to Add to Cart!")
     except:
        return render_template('login.html',currentuser=CurrentUser(),msg="Please Login to Add to Cart!")
@@ -1593,7 +1583,7 @@ def forgotpassword():
             else:
                 g.db.rollback()
                 g.db.close()
-                return render_template('forgotpassword.html',currentuser=CurrentUser(),msg="Incorrect Secret Question or answer!"+str(request.form['question'])+" and "+auth[0][1].lower()+request.form['answer'].lower(),questions=questions())
+                return render_template('forgotpassword.html',currentuser=CurrentUser(),msg="Incorrect Secret Question or answer!",questions=questions())
         except :
             return render_template('forgotpassword.html',currentuser=CurrentUser(),msg="Invalid Email! Please Register if not done.",questions=questions())
 '''
@@ -1634,7 +1624,7 @@ def about():
 
 '''
 #######################################
-LOGOUT 
+LOGOUT
 #######################################
 '''
 @app.route('/logout')
@@ -1674,7 +1664,7 @@ PORT CREATION,TABLE CREATION,INITIALIZATION OF DATABASE AND HOSTING
 if __name__ == '__main__':
     with app.app_context():
         before_request()
-        '''   
+        '''
         try:
                 g.db.execute("DROP TABLE IF EXISTS Users;")
                 g.db.execute("DROP TABLE IF EXISTS Orders;")
@@ -1692,6 +1682,7 @@ if __name__ == '__main__':
                 g.db.execute("CREATE TABLE IF NOT EXISTS Cart (id integer NOT NULL PRIMARY KEY,uid integer NOT NULL,status_id integer NOT NULL,FOREIGN KEY (uid) REFERENCES Users (id) ON DELETE CASCADE,FOREIGN KEY (status_id) REFERENCES Status (id));")
                 g.db.execute("CREATE TABLE IF NOT EXISTS Cart_Items (sl integer NOT NULL PRIMARY KEY,cart_id integer NOT NULL,p_id integer NOT NULL,quantity integer NOT NULL,p_total integer NOT NULL,FOREIGN KEY (p_id) REFERENCES Products (id) ON DELETE CASCADE,FOREIGN KEY (cart_id) REFERENCES Cart (id) ON DELETE CASCADE);")
                 g.db.execute("CREATE TABLE IF NOT EXISTS Orders (id integer PRIMARY KEY,uid integer NOT NULL,cart_id integer NOT NULL,total integer NOT NULL,order_date text NOT NULL,status_id integer NOT NULL,FOREIGN KEY (uid) REFERENCES Users (id) ON DELETE CASCADE,FOREIGN KEY (cart_id) REFERENCES Cart (id) ON DELETE CASCADE,FOREIGN KEY (status_id) REFERENCES Status (id));")
+                g.db.execute("CREATE TABLE IF NOT EXISTS ContactForm(id integer PRIMARY KEY,name text NOT NULL,msg text NOT NULL,uid integer);")
                 g.db.execute("INSERT INTO Questions(value) VALUES('What was your childhood nickname?');")
                 g.db.execute("INSERT INTO Questions(value) VALUES('Who was your childhood hero?');")
                 g.db.execute("INSERT INTO Questions(value) VALUES('What is the name of your current crush?');")

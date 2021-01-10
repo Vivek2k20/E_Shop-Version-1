@@ -6,8 +6,26 @@
 
 
 {% block body %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/aboutus.css')}}">
+<div class="aboutus" id="aboutus">
+    <font color="#0f0"><h2><u>About Us</u> :</h2><br></font>
+        <div id="info">
+            <p><b>CARTIFY</b> was designed and developed as a DBMS Project by Vivek M R And Surya Dev C.</p>
+            <p>Both of us are 3rd year students at Bangalore Institute of Technology studying Information Science.</p>
+        </div>
+    <font color="#f80"><h2><u>The Journey</u> :</h2><br></font>
+        <div id="info">
+            <p>This project took about 75+ hours to be completed. This,however doesn't include the time spent on learning the necessary skills and tools.
+            </p><font color="#ff0"><u><b>Learning stuff</u> :</b></font><br><br>
+            Inititally,At the start of November 2020,we thought of creating an e-commerce website to place order without any profile/login/search options etc for our DBMS Project. Since both of us had no prior experience in developing a website,
+            we had to learn all the tools,Especially the backend. Looking and browsing through the internet,I decided on php and sql for backend.HTML and CSS for Frontend.HTML was something I knew,While i had no idea about CSS. However,after discussing it with a cousin of mine, I decided to not learn 
+            php and instead learn Flask microframework. I created a small "Task Manager" webapp using Flask to help me understand how it worked.This small project helped me understand CSS too as I spent about 7+ hours customizing it and understanding how CSS worked.This project used a Flask module 
+            called "SQLAlchemy" to interact with sqlite database. Hence, I recieved hands-on experience with handling database in flask too.
+            </p><font color="#ff0"><u><b>Start of "DeVkart"</u> :</b></font><br><br>
+            I was ready to start working on building the site. "DeVkart" was the name chosen for the project. "Dev" representing Surya Dev, The Capital "V" Representing Vivek. Yeah,I know it sounds stupid.
+            The work on building started on 
 
-Page is Under-Construction :)
+        </div>
 
 {% if successmsg %}
     <div class="Successmsg">
