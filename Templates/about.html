@@ -17,58 +17,58 @@
             Linked-In : <a href="https://www.linkedin.com/in/vivek-m-r-0988b2171/">Vivek M R</a></p>
             You can also contact us by filling the below form. However,Please mention your contact in the message itself if you need a reply.</p>
         </div>
-        <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css')}}"> 
-<div class = "regform"><font align="center">
-    <br><u><b><style="text-align:center;">Contact Us!</style></u></b><br><br><br>
-    <div id="actualform">
-    <form action="/about" method="POST">
-        <label for="name">Name : </label>
-        <input type="text" autocomplete="off" id="name" name="name" placeholder="Enter your name" required
-        pattern="^[a-zA-Z-' ]*$">
-        <br><br>
-        <label for="message">Message : </label>
-        <textarea id="message" autocomplete="off" name="message" cols="30" rows="10" placeholder="Enter your message" required></textarea>
-        <br><br>
-        <input type="submit" value="Submit">
-    </form><br>
-    </div>
-</div></font><br><br>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css')}}">
+    <div class = "regform"><font align="center">
+        <br><u><b><style="text-align:center;">Contact Us!</style></u></b><br><br><br>
+        <div id="actualform">
+        <form action="/about" method="POST">
+            <label for="name">Name : </label>
+            <input type="text" autocomplete="off" id="name" name="name" placeholder="Enter your name" required
+            pattern="^[a-zA-Z-' ]*$">
+            <br><br>
+            <label for="message">Message : </label>
+            <textarea id="message" autocomplete="off" name="message" cols="30" rows="10" placeholder="Enter your message" required></textarea>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form><br>
+        </div>
+    </div></font><br><br>
     <font color="#f80"><h2><u>The Journey</u> :</h2><br></font>
         <div id="info">
             <p>This project took about 125+ hours to be completed. This,however doesn't include the time spent on learning the necessary skills and tools.
             </p><font color="#ff0"><u><b>Learning stuff</u> :</b></font><br><br>
             Inititally,At the start of November 2020,we thought of creating an e-commerce website to place order without any profile/login/search options etc for our DBMS Project. Since both of us had no prior experience in developing a website,
-            we had to learn all the tools,Especially the backend. Looking and browsing through the internet,I decided on php and sql for backend.HTML and CSS for Frontend.HTML was something I knew,While i had no idea about CSS. However,after discussing it with a cousin of mine, I decided to not learn 
-            php and instead learn Flask microframework. I created a small "Task Manager" webapp using Flask to help me understand how it worked.This small project helped me understand CSS too as I spent about 7+ hours customizing it and understanding how CSS worked.This project used a Flask module 
+            we had to learn all the tools,Especially the backend. Looking and browsing through the internet,I decided on php and sql for backend.HTML and CSS for Frontend.HTML was something I knew,While i had no idea about CSS. However,after discussing it with a cousin of mine, I decided to not learn
+            php and instead learn Flask microframework. I created a small "Task Manager" webapp using Flask to help me understand how it worked.This small project helped me understand CSS too as I spent about 7+ hours customizing it and understanding how CSS worked.This project used a Flask module
             called "SQLAlchemy" to interact with sqlite database. Hence, I recieved hands-on experience with handling database in flask too.
             </p><font color="#ff0"><u><b>Start of "DeVkart"</u> :</b></font><br><br>
             I was ready to start working on building the site. "DeVkart" was the name chosen for the project. "Dev" representing Surya Dev, The Capital "V" Representing Vivek. Yeah,I know it sounds stupid.
             The work on building the site started on 8th of December 2020 at 3:32 pm. A Dark theme was chosen for the project and I started experimenting with "keyframes"/animation in css. I worked about 2-3 hours a day
-            for a week. 
+            for a week.
             </p><font color="#ff0"><u><b>Taking Inspiration</u> :</b></font><br><br>
             After Exploring source code of a Flask Project created by a cousin of mine,I set to work trying to build a login module using sessions.I took huge inspirations for the design of our website from this project.
             The Search Button,The Login,Register Form text colors etc were some of the things which were inspired from this project,Apart from these visible changes,A lot of Backend Programming Practise too was inspired from this project.
             Example,Seperating each end-point, Placing a commented design between each section of code,etc.
             </p><font color="#ff0"><u><b>Panic!!</u> :</b></font><br><br>
             A Late Realization of how much time was wasted on getting the look and animation to work hit me and panic started.
-            Since I had never worked with sessions or sqlite directly and used SQLAlchemy to interact with sqlite,Things started becoming tricky and lots of unexpected bugs started cropping up.My cousin had directly used sqlite instead of using 
+            Since I had never worked with sessions or sqlite directly and used SQLAlchemy to interact with sqlite,Things started becoming tricky and lots of unexpected bugs started cropping up.My cousin had directly used sqlite instead of using
             SQLAlchemy module. Looking at how easy it looked,I tried to directly interact with sqlite as well as use SQLAlchemy in some parts of the code,and this just lead to further complications.
             </p><font color="#ff0"><u><b>The Dead-End</u> :</b></font><br><br>
             It was already 15th December. I just had a working homepage.There was no database functionality,No products,No Login Module.Just a Search button that would expand when hovering above it,A Navbar with working animation when hovering about it.
             I had already spent about 30-40 hours now. To save even more time,I decided to try out various other modules like "Flask-Login","WTF-Forms",etc. I started getting lots of unexpected errors which i would google and try to fix them.
-            However,On 16th of December,It happened. I had hit an error with WTF Forms which didn't result in any answers on googling. There appeared to be some problem in the module files itself. After Spending the whole day asking questions on 
+            However,On 16th of December,It happened. I had hit an error with WTF Forms which didn't result in any answers on googling. There appeared to be some problem in the module files itself. After Spending the whole day asking questions on
             Stack-Overflow and recieving no answers,I decided I was done. I had hit a dead-end. I couldn't fix the bug. Noone on the internet had such a bug. I had spent about a day on a single bug. Without fixing it, The site wouldn't even render.
             </p><font color="#ff0"><u><b>Starting Over</u> :</b></font><br><br>
-            The whole backend was a mess and I was exhausted. I didn't have git initialised either. With no other option left,I decided to startover. From Scratch. On the backend. 
+            The whole backend was a mess and I was exhausted. I didn't have git initialised either. With no other option left,I decided to startover. From Scratch. On the backend.
             I decided NOT to use "Flask-Login" or "WTF-Forms" or SQLALchemy this time and instead interact directly with sqlite and sessions exactly like my cousin.
             I called him up for help and got some great advice about building my site.
             But,I was running extremely low on time now. I realised a project of this scale would require a lot time in the frontend if i was going to
             just use HTML,CSS.
             </p><font color="#ff0"><u><b>Bootstrap??</u> :</b></font><br><br>
-            I decided it was time to use Bootstrap. Although that meant the frontend which was done till now might be useless,I was ready to risk it to save time in the end. 
+            I decided it was time to use Bootstrap. Although that meant the frontend which was done till now might be useless,I was ready to risk it to save time in the end.
             I requested a friend of mind to provide me with a Bootstrap project so that i could study and maybe use it in my project. She was kind enough to not only provide code,But explain how it worked.
-            After explaining the code, and listening to my situation,she suggested me to just stick to HTML,CSS. She reasoned that since we had very little time left now,It's just not feasible to spend time learning Bootstrap and then redesigning the whole website.It would less time 
-            to just spend all that time in continuing to design in HTML,CSS and get the job done.It was hard to argue with that. She was right. So,I decided to stick with HTML,CSS. 
+            After explaining the code, and listening to my situation,she suggested me to just stick to HTML,CSS. She reasoned that since we had very little time left now,It's just not feasible to spend time learning Bootstrap and then redesigning the whole website.It would less time
+            to just spend all that time in continuing to design in HTML,CSS and get the job done.It was hard to argue with that. She was right. So,I decided to stick with HTML,CSS. I have to thank her for convincing me because because in the end,it turned out to be the right decision. We wouldn't have a site looking like this if she hadn't convinced me. She is indirectly responsible for the way site looks.
             </p><font color="#ff0"><u><b>Resetting my mind</u> :</b></font><br><br>
             Meanwhile,The switch from SQLAlchemy to sqlite was not proving to be an easy one. Errors were still cropping up all time. Then, It occured to me that I was probably getting too worked up about this site.
             I had to take a break to just refresh my mind once. So,I decided to quit coding the website for a day. So I went to HackerRank,Took a test,Solved some problems,Strummed a few songs on guitar and then after a day's break,
@@ -76,13 +76,13 @@
             </p><font color="#ff0"><u><b>Coding Spree</u> :</b></font><br><br>
             I seemed to have unlocked a hidden zone after i returned. I started working about 8-10 hrs a day. I was on a spree. Whatever problems came,I was tackling them. I knew what i was doing. I had the login module ready by 22nd December.
             Meanwhile Surya had the list,details of the products which we were gonna sell ready. He was taking care of the report,E-R Diagram,various other design details of the website. The Products module was done by 24th. Internals were coming soon. I had time till 27th. I completed Cart Module by 26th.
-            Meanwhile I decided to take break because of internals till 31st.Resuming on 31st,My mind had still left the zone. I was unstoppable. Orders AND Profile Modules were completed by 2nd Jan. We had login,registration,products,carts,orders,editing profile,logout ready.
+            Meanwhile I decided to take break because of internals till 31st.Resuming on 31st,My mind had still not left the zone. I was unstoppable. Orders AND Profile Modules were completed by 2nd Jan. We had login,registration,products,carts,orders,editing profile,logout ready.
             </p><font color="#ff0"><u><b>Hosting Problems and Debugging</u> :</b></font><br><br>
-            I decided to host the site on Heroku for Surya to check it out. On Hosting, The site looked good. However the next day,The accounts or orderers we had placed were deleted from the database.
+            I decided to host the site on Heroku for Surya to check it out. On Hosting, The site looked good. However the next day,The accounts or orders we had placed were deleted from the database.
             After doing some digging, it was discovered sqlite stores its changes on the disk,but heroku would refresh it's disk once in a while. Meanwhile, The app looked really bad on a phone.
             So,I worked a whole day on the css making the site responsive. At the end of the day,the app looked amazing on phones too.
             </p><font color="#ff0"><u><b>New functionalities and Finding a new host</u> :</b></font><br><br>
-            We realised we had noway to recover accounts if users lost their password since we were hashing them and storing in the database. We either had to verify the emails or phones using OTP or 
+            We realised we had noway to recover accounts if users lost their password since we were hashing them and storing in the database. We either had to verify the emails or phones using OTP or
             keep a secret question and answer for each users. We decided to go with keeping a secret question as the OTP method would involve learning new things and we didn't have time.
             We were also told that we had to include a trigger and stored procedure too as a part of the project.Hence, We decided to include this things and make a new functionality of deleting accounts.
             Deleting accounts proved a bit tricky as it needed all information,account's orders,cart items all to be deleted,cancelled as well changing the stock of products. This took another day.
@@ -100,7 +100,7 @@
                 <li><a href="https://www.w3schools.com/">W3Schools</a> - Learnt CSS a lot from here as well as some HTML</li><br>
                 <li><a href="https://stackoverflow.com/">Stack Overflow</a> - Helped a lot with Debugging stuff.</li><br>
                 <li>My Friend,Yash - For suggesting "CARTIFY" As the name for the site.</li><br>
-                <li>All of my friends - For Testing and giving suggestions and reporting bugs</li><br>
+                <li>All of my friends - For Testing and giving suggestions and reporting bugs.</li><br>
                 <li>Surya Dev - For taking care of all the things related to report,ppt and not letting them bother me. His valuable suggestions on design and functionalities also helped a lot.</li><br>
                 <li>Finally,I want to thank me. For believing in me. For doing the hard work. For not giving up on this.</li><br>
             </ul>
@@ -114,7 +114,9 @@
                         <li>IDE : Visual Studio Code</li><br>
                         <li>Hosting : Pythonanywhere.com</li><br>
                     </ul>
-        </div>
+        </div><br>
+    <font color="#f80"><u>Source Code can be found at <a href="https://github.com/Vivek2k20/E_Shop-Version-1">my Github</a></u><br></font><br>
+</div>
 {% if successmsg %}
     <div class="Successmsg">
         {{ successmsg }}
