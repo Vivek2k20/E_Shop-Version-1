@@ -866,6 +866,10 @@ def addtocart(pid):
         ptotal=int(request.form['quantity'])*int(price[0][0])
         cursor = g.db.execute('SELECT stock FROM Products WHERE id=?;',[pid])
         stock = cursor.fetchall()
+        if len(pincart)!=0:
+            realstock=stock[0][0]+int(pincart[0][2])
+        else:
+            realstock=stock[0][0]
         g.db.commit()
         g.db.close()
     except:
@@ -873,7 +877,7 @@ def addtocart(pid):
         g.db.rollback()
         g.db.close()
         return("Exception occured while executing select price and stock")
-    if int(request.form['quantity'])>stock[0][0] :
+    if int(request.form['quantity'])>realstock :
         try:
             g.db = connect_db()
             cursor = g.db.execute('SELECT id,name,ptype_id,price,stock FROM Products WHERE id=?;',[pid])
@@ -925,7 +929,7 @@ def addtocart(pid):
             ptotal=int(request.form['quantity'])*int(price[0][0])
             args=[ptotal,int(CurrentCart_details()[0][0]),pid]
             g.db.execute("UPDATE Cart_Items SET p_total=? WHERE cart_id = ? and p_id=?",args)
-            newstock=stock[0][0]-int(request.form['quantity'])+int(pincart[0][2])
+            newstock=realstock-int(request.form['quantity'])
             args=[newstock,pid]
             g.db.execute('Update Products SET stock=? WHERE id=?',args)
             g.db.commit()
