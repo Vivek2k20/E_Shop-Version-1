@@ -13,7 +13,7 @@
     <div id="details">
         Category : {{ ptype[product[0][2]-1][0]}}<br>
         Price : ₹{{ product[0][3] }}<br>
-        Stock left : 
+        Stock left :
         {% if product[0][4] > 25 %}
             <div id="highstock">{{ product[0][4] }}</div><br>
         {% elif product[0][4]>10 %}
@@ -29,7 +29,7 @@
         <form action="/addtocart/{{ product[0][0] }}" method="POST" >
             <label for "quanity">Quantity :</label>
             <input type="number" autocomplete="off" id="quantity" name="quantity" placeholder={% if item|length<1 %}"0"{% else %}"{{ item[0][2] }}"{% endif %} value={% if item|length<1 %}"0"{% else %}"{{ item[0][2] }}"{% endif %}maxlength="2" required>
-            <input type="submit" value="🛒 ADD TO CART">
+            <br><br><input type="submit" value="🛒 ADD TO CART">
         </form>
     </div>
     {% if msg %}

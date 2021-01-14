@@ -299,7 +299,8 @@ input[type="submit"] {
     border: 0.13em solid #fff;
     border-radius: 0.13em;
     padding: 5px 10px;
-    left: 42%;
+    left: 70%;
+    margin-bottom: 10px;
     font-size: 1.3em;
     display: inline;
 }
@@ -336,14 +337,12 @@ input[type="submit"] {
             border: 0.13em solid #fff;
             background-color: #000;
             color: #fff;
-            width: 40%;
             font-size: 1em;
         }
         100% {
             border: 0.13em solid #0f0;
             background-color: #0f0;
             color: #000;
-            width: 45%;
             font-size: 1.2em;
         }
     }
@@ -451,12 +450,13 @@ input[type="submit"] {
     input[type="submit"] {
         background-color: #000;
         color: #0f0;
-        width: 40%;
+        width: fit-content;
         position: relative;
         border: 0.13em solid #fff;
         border-radius: 0.13em;
         padding: 2px 5px;
-        left: 10%;
+        left: 50%;
+        margin-bottom: 15px;
         font-size: 1em;
         display: inline;
     }
@@ -467,7 +467,7 @@ input[type="submit"] {
         animation-duration: 0.5s;
         animation-name: addtocart2;
         font-size: 1.2em;
-        width: 45%;
+        width: fit-content;
     }
     .product #details #deletefromcart {
         width: 5%;
