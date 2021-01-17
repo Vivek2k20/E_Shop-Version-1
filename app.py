@@ -1749,6 +1749,8 @@ if __name__ == '__main__':
                 g.db.execute("CREATE TABLE IF NOT EXISTS Cart_Items (sl integer NOT NULL PRIMARY KEY,cart_id integer NOT NULL,p_id integer NOT NULL,quantity integer NOT NULL,p_total integer NOT NULL,FOREIGN KEY (p_id) REFERENCES Products (id) ON DELETE CASCADE,FOREIGN KEY (cart_id) REFERENCES Cart (id) ON DELETE CASCADE);")
                 g.db.execute("CREATE TABLE IF NOT EXISTS Orders (id integer PRIMARY KEY,uid integer NOT NULL,cart_id integer NOT NULL,total integer NOT NULL,order_date text NOT NULL,status_id integer NOT NULL,FOREIGN KEY (uid) REFERENCES Users (id) ON DELETE CASCADE,FOREIGN KEY (cart_id) REFERENCES Cart (id) ON DELETE CASCADE,FOREIGN KEY (status_id) REFERENCES Status (id));")
                 g.db.execute("CREATE TABLE IF NOT EXISTS ContactForm(id integer PRIMARY KEY,name text NOT NULL,msg text NOT NULL,uid integer);")
+                g.db.execute("CREATE PROCEDURE Clearorders @uid Integer AS Delete FROM Orders WHERE uid = @uid;")
+                g.db.execute("CREATE TRIGGER ClearAccountinfo before DELETE on Users for each row EXEC Clearorders @uid=Users.id;")
                 g.db.execute("INSERT INTO Questions(value) VALUES('What was your childhood nickname?');")
                 g.db.execute("INSERT INTO Questions(value) VALUES('Who was your childhood hero?');")
                 g.db.execute("INSERT INTO Questions(value) VALUES('What is the name of your current crush?');")
